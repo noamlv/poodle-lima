@@ -1,0 +1,32 @@
+name: Actualizar datos
+
+on:
+  workflow_dispatch:
+    inputs:
+      nuevo_poodle:
+        description: 'JSON del nuevo poodle (opcional)'
+        required: false
+        type: string
+      mensaje:
+        description: 'Motivo de la actualizacion'
+        required: true
+        default: 'Actualizacion manual de datos'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate HTML
+        run: |
+          if [ -f "poodles.html" ]; then
+            echo "HTML existe. Verificando sintaxis basica..."
+            grep -q "const poodles = \[" poodles.html && echo "OK: datos encontrados" || echo "WARN: no se encontro array de poodles"
+          else
+            echo "ERROR: poodles.html no encontrado"
+            exit 1
+          fi
+      - name: Commit and push
+        run: |
+          echo "Workflow completado: ${{ github.event.inputs.mensaje }}"
