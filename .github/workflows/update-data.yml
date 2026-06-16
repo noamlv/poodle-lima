@@ -1,32 +1,136 @@
-name: Actualizar datos
+name: Agregar poodle manualmente
 
 on:
   workflow_dispatch:
     inputs:
-      nuevo_poodle:
-        description: 'JSON del nuevo poodle (opcional)'
+      titulo:
+        description: 'Titulo del poodle'
+        required: true
+        type: string
+      tipo:
+        description: 'Tipo: adopcion o venta'
+        required: true
+        default: 'venta'
+        type: choice
+        options:
+          - adopcion
+          - venta
+      precio:
+        description: 'Precio en soles (0 para adopcion)'
+        required: true
+        type: number
+      color:
+        description: 'Color: marron, apricot, rojo'
+        required: true
+        type: choice
+        options:
+          - marron
+          - apricot
+          - rojo
+      tamano:
+        description: 'Tamano: enano o miniatura'
+        required: true
+        type: choice
+        options:
+          - enano
+          - miniatura
+      ubicacion:
+        description: 'Ubicacion (ej: Surco, Lima)'
+        required: true
+        type: string
+      contacto:
+        description: 'WhatsApp sin +51 (ej: 999888777) o nombre'
+        required: true
+        type: string
+      url:
+        description: 'URL del anuncio'
+        required: true
+        type: string
+      notas:
+        description: 'Notas adicionales'
         required: false
         type: string
-      mensaje:
-        description: 'Motivo de la actualizacion'
-        required: true
-        default: 'Actualizacion manual de datos'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
-  update:
+  add-poodle:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Validate HTML
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci --omit=dev
+
+      - name: Agregar poodle a data/poodles.json
         run: |
-          if [ -f "poodles.html" ]; then
-            echo "HTML existe. Verificando sintaxis basica..."
-            grep -q "const poodles = \[" poodles.html && echo "OK: datos encontrados" || echo "WARN: no se encontro array de poodles"
-          else
-            echo "ERROR: poodles.html no encontrado"
-            exit 1
-          fi
-      - name: Commit and push
+          node -e "
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('data/poodles.json','utf8'));
+          const today = new Date().toISOString().split('T')[0];
+          const newId = Math.max(...data.poodles.map(p=>p.id), 0) + 1;
+          const wa = '${{ inputs.contacto }}'.match(/^\\d{9,12}$/) ? '${{ inputs.contacto }}' : '';
+          const penalties = [];
+          if (!wa) penalties.push('sin_wa');
+          const qpvBase = '${{ inputs.tipo }}' === 'adopcion' ? 100 :
+            parseInt('${{ inputs.precio }}') <= 2500 ? 90 :
+            parseInt('${{ inputs.precio }}') <= 2800 ? 85 :
+            parseInt('${{ inputs.precio }}') <= 3500 ? 75 : 70;
+          data.poodles.push({
+            id: newId,
+            title: '${{ inputs.titulo }}',
+            subtitle: '${{ inputs.ubicacion }}',
+            type: '${{ inputs.tipo }}',
+            price: parseInt('${{ inputs.precio }}'),
+            color: '${{ inputs.color }}',
+            size: '${{ inputs.tamano }}',
+            location: '${{ inputs.ubicacion }}',
+            contact: wa ? 'WhatsApp ${{ inputs.contacto }}' : '${{ inputs.contacto }}',
+            wa: wa,
+            url: '${{ inputs.url }}',
+            source: 'manual',
+            notes: '${{ inputs.notas }}',
+            badges: [],
+            status: 'consultar',
+            qpvBase: qpvBase,
+            bonuses: ['color_prioritario','tamano_ideal'],
+            penalties: penalties,
+            addedAt: today,
+            lastChecked: today
+          });
+          fs.writeFileSync('data/poodles.json', JSON.stringify(data, null, 2));
+          console.log('Poodle agregado: #' + newId + ' - ${{ inputs.titulo }}');
+          "
+
+      - name: Generar HTML
+        run: node scripts/build.js
+
+      - name: Commit y push
         run: |
-          echo "Workflow completado: ${{ github.event.inputs.mensaje }}"
+          git config user.name "Poodle Bot"
+          git config user.email "poodle-bot@noamlv.github.io"
+          git add data/poodles.json poodles.html
+          git commit -m "feat: agregar poodle #$(node -e \"const d=JSON.parse(require('fs').readFileSync('data/poodles.json','utf8'));console.log(Math.max(...d.poodles.map(p=>p.id)))\") - ${{ inputs.titulo }}"
+          git push
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

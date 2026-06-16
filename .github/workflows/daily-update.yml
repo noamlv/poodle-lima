@@ -1,0 +1,95 @@
+name: Actualizacion diaria
+
+on:
+  schedule:
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: daily-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci --omit=dev
+
+      - name: Scraping de fuentes
+        run: node scripts/scrape.js 2>&1 || echo "Scraping continuo con errores parciales"
+
+      - name: Verificar cambios de precio
+        id: check-prices
+        run: |
+          node scripts/check-prices.js 2>&1 | tee /tmp/price-alerts.txt
+          echo "alerts<<EOF" >> $GITHUB_OUTPUT
+          grep -i "BAJA" /tmp/price-alerts.txt >> $GITHUB_OUTPUT || true
+          grep -i "SUBIO" /tmp/price-alerts.txt >> $GITHUB_OUTPUT || true
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Generar HTML
+        run: node scripts/build.js
+
+      - name: Detectar cambios en datos
+        id: data-changed
+        run: |
+          if git diff --quiet data/; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit y push si hay cambios
+        if: steps.data-changed.outputs.changed == 'true'
+        run: |
+          git config user.name "Poodle Bot"
+          git config user.email "poodle-bot@noamlv.github.io"
+          git add data/ poodles.html package*.json
+          git diff --cached --quiet || git commit -m "auto: actualizacion diaria $(date +%Y-%m-%d)"
+          git push
+
+      - name: Crear Issue si hay bajas de precio
+        if: steps.check-prices.outputs.alerts != ''
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const alerts = `${{ steps.check-prices.outputs.alerts }}`;
+            if (alerts.includes('BAJA')) {
+              github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: 'Bajas de precio detectadas - ' + new Date().toLocaleDateString('es-PE'),
+                body: 'Se detectaron cambios de precio:\n\n```\n' + alerts + '\n```\n\n_Generado automaticamente_'
+              });
+            }
+
+      - name: Setup Pages
+        if: steps.data-changed.outputs.changed == 'true'
+        uses: actions/configure-pages@v4
+
+      - name: Upload Pages artifact
+        if: steps.data-changed.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to Pages
+        if: steps.data-changed.outputs.changed == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4
