@@ -54,9 +54,21 @@ Ir a Actions > "Agregar poodle manualmente" > Run workflow > llenar formulario.
 
 ### Opcion 3: Scraping automatico
 El scraper corre cada dia a las 8am (hora Peru). Revisa:
-- **WUF Peru** (wuf.pe/adoptawuf) - adopciones
-- **MercadoLibre Peru** - ventas
-- **Puppy Toy Peru, Premium Kennel, Lima Onepets, Happy Pets** - criadores
+
+**Adopciones:**
+- **WUF Peru** (wuf.pe/adoptawuf) - ONG oficial de Lima
+- **Adopta Lima** (adoptalima.org) - portal municipal
+
+**Ventas:**
+- **MercadoLibre Peru** (3 busquedas: poodle miniatura, poodle enano, cachorros poodle)
+- **OLX Peru** (olx.pe) - clasificados
+- **Criadores:** Puppy Toy Peru, Premium Kennel, Lima Onepets, Happy Pets, Central Pets Peru
+
+### Opcion 4: Sugerir desde redes sociales
+Si encuentras un poodle en Facebook, Instagram o TikTok:
+1. Ve a Issues > "Sugerir un poodle"
+2. Llena el formulario con el link y datos
+3. Se agregara manualmente al dashboard
 
 ## Tracking de precios
 
