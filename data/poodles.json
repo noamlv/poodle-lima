@@ -443,43 +443,6 @@
       ],
       "addedAt": "2026-06-13",
       "lastChecked": "2026-06-16"
-    },
-    {
-      "id": 15,
-      "title": "Poodle Mini Toy Apricot - Puppy Toy Peru",
-      "subtitle": "Puppy Toy Peru · Los Olivos",
-      "type": "venta",
-      "price": 4000,
-      "color": "apricot",
-      "size": "miniatura",
-      "location": "Los Olivos, Lima",
-      "contact": "WhatsApp 920 688 338",
-      "wa": "51920688338",
-      "url": "https://puppytoyperu.com/tienda/",
-      "source": "puppy_toy_peru",
-      "notes": "Mini Toy Apricot. Al limite del presupuesto. Pedigree, vacunas, garantia de salud incluida.",
-      "badges": [
-        "criadero_certificado",
-        "pedigree",
-        "vacunas",
-        "garantia",
-        "criadero_verificado"
-      ],
-      "status": "disponible",
-      "qpvBase": 70,
-      "bonuses": [
-        "color_prioritario",
-        "tamano_ideal",
-        "criador_verificado",
-        "vacunas",
-        "pedigree",
-        "garantia_salud"
-      ],
-      "penalties": [
-        "precio_alto_sin_pedigree"
-      ],
-      "addedAt": "2026-06-16",
-      "lastChecked": "2026-06-16"
     }
   ]
 }
