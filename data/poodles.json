@@ -17,11 +17,19 @@
       "url": "https://www.tiktok.com/@familia.huellitas17/video/7648863250624285960",
       "source": "tiktok",
       "notes": "Publicado 7 junio 2026. Machito enano, ultimo bebe disponible. Contactar por DM.",
-      "badges": ["publicado_reciente", "lima_verificado"],
+      "badges": [
+        "publicado_reciente",
+        "lima_verificado"
+      ],
       "status": "consultar",
       "qpvBase": 100,
-      "bonuses": ["color_prioritario", "tamano_ideal"],
-      "penalties": ["sin_wa"],
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal"
+      ],
+      "penalties": [
+        "sin_wa"
+      ],
       "addedAt": "2026-06-10",
       "lastChecked": "2026-06-16"
     },
@@ -39,11 +47,18 @@
       "url": "https://www.tiktok.com/@animalsurco24oficial/video/7479197864405568773",
       "source": "tiktok",
       "notes": "Cachorros pequenos en adopcion gratuita Lima. Contactar directamente por la cuenta.",
-      "badges": ["lima_verificado"],
+      "badges": [
+        "lima_verificado"
+      ],
       "status": "consultar",
       "qpvBase": 100,
-      "bonuses": ["color_prioritario", "tamano_ideal"],
-      "penalties": ["sin_wa"],
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal"
+      ],
+      "penalties": [
+        "sin_wa"
+      ],
       "addedAt": "2026-06-10",
       "lastChecked": "2026-06-16"
     },
@@ -61,11 +76,18 @@
       "url": "https://www.facebook.com/groups/862034868948734/",
       "source": "facebook",
       "notes": "Machito apricot enano disponible. Publicacion en grupo oficial.",
-      "badges": ["lima_verificado"],
+      "badges": [
+        "lima_verificado"
+      ],
       "status": "consultar",
       "qpvBase": 100,
-      "bonuses": ["color_prioritario", "tamano_ideal"],
-      "penalties": ["sin_wa"],
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal"
+      ],
+      "penalties": [
+        "sin_wa"
+      ],
       "addedAt": "2026-06-10",
       "lastChecked": "2026-06-16"
     },
@@ -83,11 +105,18 @@
       "url": "https://www.instagram.com/p/DUjSSXojOtq/",
       "source": "instagram",
       "notes": "Caniche mini de 2,5 kg. Adopcion con formulario y compromiso responsable.",
-      "badges": ["caso_especial"],
+      "badges": [
+        "caso_especial"
+      ],
       "status": "consultar",
       "qpvBase": 100,
-      "bonuses": ["color_prioritario", "tamano_ideal"],
-      "penalties": ["sin_wa"],
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal"
+      ],
+      "penalties": [
+        "sin_wa"
+      ],
       "addedAt": "2026-06-10",
       "lastChecked": "2026-06-16"
     },
@@ -105,33 +134,54 @@
       "url": "https://www.instagram.com/animalesenadopcionlima/",
       "source": "instagram",
       "notes": "Entregan desparasitado, vacunado, esterilizado y con Simparica + saco de comida.",
-      "badges": ["vacunas", "esterilizado", "refugio_oficial"],
+      "badges": [
+        "vacunas",
+        "esterilizado",
+        "refugio_oficial"
+      ],
       "status": "disponible",
       "qpvBase": 100,
-      "bonuses": ["color_prioritario", "tamano_ideal", "vacunas"],
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "vacunas"
+      ],
       "penalties": [],
       "addedAt": "2026-06-10",
       "lastChecked": "2026-06-16"
     },
     {
       "id": 6,
-      "title": "Poodle Enano Apricot - Premium Kennel",
+      "title": "Poodle Toy - Premium Kennel (desde S/2,500)",
       "subtitle": "Premium Kennel · Miraflores",
       "type": "venta",
       "price": 2500,
       "color": "apricot",
-      "size": "enano",
+      "size": "miniatura",
       "location": "Miraflores, Lima",
       "contact": "WhatsApp 934 737 929",
       "wa": "51934737929",
       "url": "https://cachorrosperu.pe/categoria/raza-miniatura/",
       "source": "premium_kennel",
-      "notes": "Cachorro enano apricot. Pedigree, vacunas, garantia de salud. Delivery gratis.",
-      "badges": ["criadero_oficial", "garantia_salud", "pedigree", "vacunas", "criadero_verificado"],
-      "status": "disponible",
+      "notes": "Precio base S/2,500. Colores chocolate (S/4,800) y rojo (S/5,500) EXCEDEN presupuesto. Preguntar por apricot o marron en precio base.",
+      "badges": [
+        "criadero_oficial",
+        "pedigree",
+        "vacunas",
+        "criadero_verificado"
+      ],
+      "status": "consultar",
       "qpvBase": 90,
-      "bonuses": ["color_prioritario", "tamano_ideal", "criador_verificado", "vacunas", "pedigree", "garantia_salud"],
-      "penalties": [],
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado",
+        "vacunas",
+        "pedigree"
+      ],
+      "penalties": [
+        "precio_alto_sin_pedigree"
+      ],
       "addedAt": "2026-06-10",
       "lastChecked": "2026-06-16"
     },
@@ -149,10 +199,23 @@
       "url": "https://puppytoyperu.com/tienda/",
       "source": "puppy_toy_peru",
       "notes": "Criador con +10 anos experiencia. Pedigree, vacunas, garantia de salud. Envio a todo Peru.",
-      "badges": ["criadero_certificado", "pedigree", "vacunas", "garantia", "criadero_verificado"],
+      "badges": [
+        "criadero_certificado",
+        "pedigree",
+        "vacunas",
+        "garantia",
+        "criadero_verificado"
+      ],
       "status": "disponible",
       "qpvBase": 75,
-      "bonuses": ["color_prioritario", "tamano_ideal", "criador_verificado", "vacunas", "pedigree", "garantia_salud"],
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado",
+        "vacunas",
+        "pedigree",
+        "garantia_salud"
+      ],
       "penalties": [],
       "addedAt": "2026-06-10",
       "lastChecked": "2026-06-16"
@@ -171,11 +234,21 @@
       "url": "https://limapetsperu.com/producto/poodle-apricot-rojo/",
       "source": "lima_pets",
       "notes": "Elegantes y juguetones. Criadero en Cieneguilla. Consultar disponibilidad antes de visitar.",
-      "badges": ["criadero_oficial", "vacunas"],
+      "badges": [
+        "criadero_oficial",
+        "vacunas"
+      ],
       "status": "consultar",
       "qpvBase": 75,
-      "bonuses": ["color_prioritario", "tamano_ideal", "vacunas"],
-      "penalties": ["sin_wa", "enlace_generico"],
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "vacunas"
+      ],
+      "penalties": [
+        "sin_wa",
+        "enlace_generico"
+      ],
       "addedAt": "2026-06-10",
       "lastChecked": "2026-06-16"
     },
@@ -193,11 +266,22 @@
       "url": "https://happypets.pe/product/poodle-apricot/",
       "source": "happy_pets",
       "notes": "Rojo pimenton caracteristico, favorito de familias. Pedigree y vacunas incluidas.",
-      "badges": ["criadero_oficial", "pedigree", "vacunas"],
+      "badges": [
+        "criadero_oficial",
+        "pedigree",
+        "vacunas"
+      ],
       "status": "consultar",
       "qpvBase": 75,
-      "bonuses": ["color_prioritario", "tamano_ideal", "vacunas", "pedigree"],
-      "penalties": ["sin_wa"],
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "vacunas",
+        "pedigree"
+      ],
+      "penalties": [
+        "sin_wa"
+      ],
       "addedAt": "2026-06-10",
       "lastChecked": "2026-06-16"
     },
@@ -214,12 +298,27 @@
       "wa": "51920688338",
       "url": "https://puppytoyperu.com/tienda/",
       "source": "puppy_toy_peru",
-      "notes": "Color marron exclusivo. Pedigree completo, padres campeones. Garantia de salud incluida.",
-      "badges": ["criadero_certificado", "pedigree", "vacunas", "garantia", "criadero_verificado"],
+      "notes": "Color marron chocolate exclusivo. Pedigree completo, padres campeones. Garantia de salud incluida. Precio confirmado S/4,000.",
+      "badges": [
+        "criadero_certificado",
+        "pedigree",
+        "vacunas",
+        "garantia",
+        "criadero_verificado"
+      ],
       "status": "disponible",
       "qpvBase": 70,
-      "bonuses": ["color_prioritario", "tamano_ideal", "criador_verificado", "vacunas", "pedigree", "garantia_salud"],
-      "penalties": ["precio_alto_sin_pedigree"],
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado",
+        "vacunas",
+        "pedigree",
+        "garantia_salud"
+      ],
+      "penalties": [
+        "precio_alto_sin_pedigree"
+      ],
       "addedAt": "2026-06-10",
       "lastChecked": "2026-06-16"
     },
@@ -237,11 +336,22 @@
       "url": "https://happypetsoficial.com/producto/poodle-toy-rojo/",
       "source": "happy_pets",
       "notes": "Al limite del presupuesto. Verificar tamano enano/miniatura (no toy puro). Pedigree incluido.",
-      "badges": ["pedigree", "vacunas"],
+      "badges": [
+        "pedigree",
+        "vacunas"
+      ],
       "status": "consultar",
       "qpvBase": 70,
-      "bonuses": ["color_prioritario", "tamano_ideal", "vacunas", "pedigree"],
-      "penalties": ["sin_wa", "precio_alto_sin_pedigree"],
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "vacunas",
+        "pedigree"
+      ],
+      "penalties": [
+        "sin_wa",
+        "precio_alto_sin_pedigree"
+      ],
       "addedAt": "2026-06-10",
       "lastChecked": "2026-06-16"
     },
@@ -259,10 +369,17 @@
       "url": "https://www.facebook.com/groups/1546254429514430/",
       "source": "facebook",
       "notes": "1 mes 10 dias, ya vacunados. Padres presentes para verificar tamano adulto.",
-      "badges": ["vacunas", "padres_presentes"],
+      "badges": [
+        "vacunas",
+        "padres_presentes"
+      ],
       "status": "disponible",
       "qpvBase": 85,
-      "bonuses": ["color_prioritario", "tamano_ideal", "vacunas"],
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "vacunas"
+      ],
       "penalties": [],
       "addedAt": "2026-06-10",
       "lastChecked": "2026-06-16"
@@ -281,10 +398,15 @@
       "url": "https://www.facebook.com/groups/1546254429514430/",
       "source": "facebook",
       "notes": "Criador particular en SJL. Consultar vacunas, desparasitacion y tamano adulto.",
-      "badges": ["lima_verificado"],
+      "badges": [
+        "lima_verificado"
+      ],
       "status": "disponible",
       "qpvBase": 90,
-      "bonuses": ["color_prioritario", "tamano_ideal"],
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal"
+      ],
       "penalties": [],
       "addedAt": "2026-06-10",
       "lastChecked": "2026-06-16"
@@ -303,12 +425,60 @@
       "url": "https://limaonepets.com",
       "source": "lima_onepets",
       "notes": "Criador con videollamada previa. Apricot miniatura. Verificar disponibilidad.",
-      "badges": ["criadero_oficial", "vacunas", "criadero_verificado"],
+      "badges": [
+        "criadero_oficial",
+        "vacunas",
+        "criadero_verificado"
+      ],
       "status": "consultar",
       "qpvBase": 85,
-      "bonuses": ["color_prioritario", "tamano_ideal", "criador_verificado", "vacunas"],
-      "penalties": ["enlace_generico"],
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado",
+        "vacunas"
+      ],
+      "penalties": [
+        "enlace_generico"
+      ],
       "addedAt": "2026-06-13",
+      "lastChecked": "2026-06-16"
+    },
+    {
+      "id": 15,
+      "title": "Poodle Mini Toy Apricot - Puppy Toy Peru",
+      "subtitle": "Puppy Toy Peru · Los Olivos",
+      "type": "venta",
+      "price": 4000,
+      "color": "apricot",
+      "size": "miniatura",
+      "location": "Los Olivos, Lima",
+      "contact": "WhatsApp 920 688 338",
+      "wa": "51920688338",
+      "url": "https://puppytoyperu.com/tienda/",
+      "source": "puppy_toy_peru",
+      "notes": "Mini Toy Apricot. Al limite del presupuesto. Pedigree, vacunas, garantia de salud incluida.",
+      "badges": [
+        "criadero_certificado",
+        "pedigree",
+        "vacunas",
+        "garantia",
+        "criadero_verificado"
+      ],
+      "status": "disponible",
+      "qpvBase": 70,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado",
+        "vacunas",
+        "pedigree",
+        "garantia_salud"
+      ],
+      "penalties": [
+        "precio_alto_sin_pedigree"
+      ],
+      "addedAt": "2026-06-16",
       "lastChecked": "2026-06-16"
     }
   ]
