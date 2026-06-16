@@ -3,7 +3,6 @@ const path = require('path');
 const { loadPoodles, calcQPV, BONUSES, PENALTIES } = require('./utils');
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
-const TEMPLATE_FILE = path.join(DATA_DIR, 'template.html');
 const OUTPUT_FILE = path.join(__dirname, '..', 'poodles.html');
 
 const getQPVClass = (qpv) => {

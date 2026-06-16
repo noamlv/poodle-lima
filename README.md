@@ -1,30 +1,76 @@
 # Poodle Lima - Dashboard de Poodles en Lima
 
-Dashboard web de poodles enanos (28-35cm) y miniatura (35-45cm) en Lima, Peru. Colores marron, apricot y rojo. Adopciones gratis y venta hasta S/ 4,000.
+Dashboard web de poodles enanos (28-35cm) y miniatura (35-45cm) en Lima, Peru.
+Colores marron, apricot y rojo. Adopciones gratis y venta hasta S/ 4,000.
 
 **Dashboard online:** https://noamlv.github.io/poodle-lima/poodles.html
 
-## Contenido
+## Arquitectura
 
-- 1 archivo HTML (`poodles.html`) con todo incluido (CSS + JS + datos)
-- README.md con documentacion
+### Flujo de actualizacion diaria
 
-## Mejoras del Dashboard (v8)
+```
+Scrapers (8am cada dia) → data/poodles.json → scripts/build.js → poodles.html → GitHub Pages
+                                ↓
+                      scripts/check-prices.js
+                                ↓
+                     Issue si hay BAJA de precio
+```
 
-- **QPV con desglose interactivo** - Haz clic en el puntaje para ver base, bonificaciones y penalizaciones
-- **14 poodles reales** verificados con enlaces WhatsApp directos
-- **Filtros**: por tipo (adopcion/venta), color (marron/apricot/rojo), tamano (enano/miniatura)
-- **Ordenamiento**: por QPV, precio ascendente, precio descendente
-- **Busqueda textual** por nombre, criador o ubicacion
-- **Criadores verificados**: Puppy Toy Peru, Premium Kennel, Lima Onepets con enlaces directos
-- **Estadisticas**: total, adopciones, ventas, rango de precios, QPV promedio
-- **100% responsive** - funciona en mobil y desktop
-- **Compartir nativo** - via WhatsApp, AirDrop, etc.
+### Archivos
+
+| Archivo | Proposito |
+|---------|-----------|
+| `data/poodles.json` | Base de datos de poodles (editar aqui para agregar/quitar) |
+| `data/history.json` | Historial de cambios de precio |
+| `scripts/build.js` | Genera `poodles.html` desde `data/poodles.json` |
+| `scripts/scrape.js` | Scraper de WUF, MercadoLibre y criadores |
+| `scripts/check-prices.js` | Detecta bajas y subidas de precio |
+| `scripts/utils.js` | Constantes QPV y funciones compartidas |
+| `poodles.html` | Dashboard generado (NO editar manualmente) |
+
+## GitHub Actions
+
+| Workflow | Schedule | Que hace |
+|----------|----------|----------|
+| `daily-update.yml` | 8am cada dia | Scrapea fuentes, verifica precios, genera HTML, deploy a Pages. Crea Issue si hay bajas. |
+| `deploy-pages.yml` | Al hacer push | Genera HTML desde JSON y deploy a Pages |
+| `update-data.yml` | Manual | Formulario para agregar un poodle nuevo |
+| `check-links.yml` | Cada lunes | Verifica que los enlaces no esten rotos |
+
+## Como actualizar datos
+
+### Opcion 1: Editar data/poodles.json (recomendado)
+Agregar o modificar objetos en el array `poodles`. Luego ejecutar:
+
+```bash
+npm run build
+```
+
+Esto regenera `poodles.html` automaticamente.
+
+### Opcion 2: GitHub Actions
+Ir a Actions > "Agregar poodle manualmente" > Run workflow > llenar formulario.
+
+### Opcion 3: Scraping automatico
+El scraper corre cada dia a las 8am (hora Peru). Revisa:
+- **WUF Peru** (wuf.pe/adoptawuf) - adopciones
+- **MercadoLibre Peru** - ventas
+- **Puppy Toy Peru, Premium Kennel, Lima Onepets, Happy Pets** - criadores
+
+## Tracking de precios
+
+El script `check-prices.js` visita las URLs de cada poodle en venta y compara el precio actual con el registrado. Si encuentra una **baja**, crea automaticamente un Issue en GitHub.
+
+Para ejecutar manualmente:
+```bash
+npm run check-prices
+```
 
 ## Algoritmo QPV
 
-| Tipo | Puntuacion Base |
-|------|----------------|
+| Tipo | Base |
+|------|------|
 | Adopcion gratuita | 100 |
 | Venta S/ 1,800-2,500 | 90 |
 | Venta S/ 2,500-2,800 | 85 |
@@ -33,53 +79,22 @@ Dashboard web de poodles enanos (28-35cm) y miniatura (35-45cm) en Lima, Peru. C
 
 Bonificaciones: +5 color prioritario, +5 tamano ideal, +10 criador verificado, +5 vacunas, +5 pedigree, +5 garantia salud
 
-Penalizaciones: -10 sin datos salud, -20 ubicacion no verificada, -15 precio >S/3500 sin pedigree, -10 enlace generico
+Penalizaciones: -10 sin WhatsApp, -10 sin datos salud, -20 ubicacion no verificada, -15 precio >S/3500 sin pedigree, -10 enlace generico
 
-## Como actualizar los datos
-
-1. Editar `poodles.html`
-2. Buscar `const poodles = [` en JavaScript
-3. Agregar o modificar objetos con la estructura existente
-4. Commit y push a GitHub
-
-Estructura de cada poodle:
-
-```javascript
-{
-  id: 15,
-  titulo: "Poodle Mini Marron - Criador X",
-  subtitulo: "Ubicacion y contacto",
-  tipo: "adopcion", // o "venta"
-  precio: 0, // 0 para adopcion
-  color: "marron", // marron, apricot, rojo
-  tamano: "enano", // enano o miniatura
-  ubicacion: "Distrito, Lima",
-  contacto: "Nombre",
-  wa: "51999988877", // o "" si no hay WhatsApp
-  link: "https://...",
-  notas: "Informacion adicional",
-  badges: ["lima_verificado"], // etiquetas de verificacion
-  estado: "disponible", // o "consultar"
-  qpvBase: 100, // segun tabla
-  bonuses: ["color_prioritario", "tamano_ideal"],
-  penalties: []
-}
-```
-
-## GitHub Actions
-
-- **Deploy a Pages**: Se activa automaticamente al hacer push a `main`
-- **Verificar enlaces**: Corre cada lunes a las 10am, crea un Issue si encuentra enlaces rotos
-- **Actualizar datos**: Workflow manual para validar cambios
-
-## Fuentes verificadas
+## Criadores verificados
 
 | Criador | WhatsApp | Ubicacion |
 |---------|----------|-----------|
-| Puppy Toy Peru | +51 920 688 338 | Los Olivos |
-| Premium Kennel | +51 934 737 929 | Miraflores |
-| Lima Onepets | +51 989 886 841 | San Martin de Porres |
+| Puppy Toy Peru | [+51 920 688 338](https://wa.me/51920688338) | Los Olivos |
+| Premium Kennel | [+51 934 737 929](https://wa.me/51934737929) | Miraflores |
+| Lima Onepets | [+51 989 886 841](https://wa.me/51989886841) | San Martin de Porres |
 
-## Contacto
+## Requisitos locales
 
-Proyecto personal de Noam Lopez.
+- Node.js 18+
+```bash
+npm install
+npm run build    # genera poodles.html
+npm run scrape   # ejecuta scraping
+npm run check-prices  # verifica precios
+```
