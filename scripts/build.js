@@ -312,6 +312,9 @@ footer a:hover{text-decoration:underline}
         <a href="https://wa.me/51989886841?text=Hola%2C%20vi%20el%20dashboard%20de%20Poodles%20Lima.%20%C2%BFTienen%20poodle%20enano%20o%20miniatura%20disponible%3F" target="_blank">WhatsApp: +51 989 886 841</a>
       </div>
     </div>
+    <p style="margin-top:12px;font-size:.8rem;color:#6c757d;text-align:center;">
+      Algunos criadores tambien ofrecen Mini Toy (&lt;28cm). Pregunta si tienen <strong>Enano (28-35cm)</strong> o <strong>Miniatura (35-45cm)</strong> disponible.
+    </p>
   </div>
   <div class="consejos">
     <h3>Consejos antes de contactar</h3>
