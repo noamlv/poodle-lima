@@ -1,5 +1,41 @@
 {
-  "priceHistory": {},
+  "priceHistory": {
+    "6": [
+      {
+        "price": 2024,
+        "date": "2026-06-17",
+        "previousPrice": 2500
+      }
+    ],
+    "7": [
+      {
+        "price": 2025,
+        "date": "2026-06-17",
+        "previousPrice": 3500
+      }
+    ],
+    "10": [
+      {
+        "price": 2025,
+        "date": "2026-06-17",
+        "previousPrice": 4000
+      }
+    ],
+    "12": [
+      {
+        "price": 19,
+        "date": "2026-06-17",
+        "previousPrice": 2800
+      }
+    ],
+    "14": [
+      {
+        "price": 2025,
+        "date": "2026-06-17",
+        "previousPrice": 2800
+      }
+    ]
+  },
   "addedHistory": {},
   "removedHistory": []
 }

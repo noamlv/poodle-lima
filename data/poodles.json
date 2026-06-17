@@ -1,125 +1,8 @@
 {
   "version": 8,
-  "lastUpdated": "2026-06-16",
-  "lastScraped": null,
+  "lastUpdated": "2026-06-17",
+  "lastScraped": "2026-06-17",
   "poodles": [
-    {
-      "id": 1,
-      "title": "Poodle Enano Macho - Ultimo Bebe",
-      "subtitle": "Familia Huellitas · Lima",
-      "type": "adopcion",
-      "price": 0,
-      "color": "apricot",
-      "size": "enano",
-      "location": "Lima",
-      "contact": "TikTok @familia.huellitas17",
-      "wa": "",
-      "url": "https://www.tiktok.com/@familia.huellitas17/video/7648863250624285960",
-      "source": "tiktok",
-      "notes": "Publicado 7 junio 2026. Machito enano, ultimo bebe disponible. Contactar por DM.",
-      "badges": [
-        "publicado_reciente",
-        "lima_verificado"
-      ],
-      "status": "consultar",
-      "qpvBase": 100,
-      "bonuses": [
-        "color_prioritario",
-        "tamano_ideal"
-      ],
-      "penalties": [
-        "sin_wa"
-      ],
-      "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
-    },
-    {
-      "id": 2,
-      "title": "Mini Caniches en Adopcion Gratuita",
-      "subtitle": "Rescate Lima · Animales Surco",
-      "type": "adopcion",
-      "price": 0,
-      "color": "marron",
-      "size": "enano",
-      "location": "Surco, Lima",
-      "contact": "TikTok @animalsurco24oficial",
-      "wa": "",
-      "url": "https://www.tiktok.com/@animalsurco24oficial/video/7479197864405568773",
-      "source": "tiktok",
-      "notes": "Cachorros pequenos en adopcion gratuita Lima. Contactar directamente por la cuenta.",
-      "badges": [
-        "lima_verificado"
-      ],
-      "status": "consultar",
-      "qpvBase": 100,
-      "bonuses": [
-        "color_prioritario",
-        "tamano_ideal"
-      ],
-      "penalties": [
-        "sin_wa"
-      ],
-      "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
-    },
-    {
-      "id": 3,
-      "title": "Machito Poodle Apricot Enano",
-      "subtitle": "Grupo Poodle Lima Peru",
-      "type": "adopcion",
-      "price": 0,
-      "color": "apricot",
-      "size": "enano",
-      "location": "Lima",
-      "contact": "Facebook Poodle Lima Peru",
-      "wa": "",
-      "url": "https://www.facebook.com/groups/862034868948734/",
-      "source": "facebook",
-      "notes": "Machito apricot enano disponible. Publicacion en grupo oficial.",
-      "badges": [
-        "lima_verificado"
-      ],
-      "status": "consultar",
-      "qpvBase": 100,
-      "bonuses": [
-        "color_prioritario",
-        "tamano_ideal"
-      ],
-      "penalties": [
-        "sin_wa"
-      ],
-      "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
-    },
-    {
-      "id": 4,
-      "title": "Caniche Minitoy en Adopcion - Caso Especial",
-      "subtitle": "Rescate con compromiso",
-      "type": "adopcion",
-      "price": 0,
-      "color": "marron",
-      "size": "miniatura",
-      "location": "Lima",
-      "contact": "Instagram DM",
-      "wa": "",
-      "url": "https://www.instagram.com/p/DUjSSXojOtq/",
-      "source": "instagram",
-      "notes": "Caniche mini de 2,5 kg. Adopcion con formulario y compromiso responsable.",
-      "badges": [
-        "caso_especial"
-      ],
-      "status": "consultar",
-      "qpvBase": 100,
-      "bonuses": [
-        "color_prioritario",
-        "tamano_ideal"
-      ],
-      "penalties": [
-        "sin_wa"
-      ],
-      "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
-    },
     {
       "id": 5,
       "title": "Animales en Adopcion Lima - Poodle Apricot",
@@ -148,49 +31,16 @@
       ],
       "penalties": [],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
-    },
-    {
-      "id": 6,
-      "title": "Poodle Toy - Premium Kennel (desde S/2,500)",
-      "subtitle": "Premium Kennel · Miraflores",
-      "type": "venta",
-      "price": 2500,
-      "color": "apricot",
-      "size": "miniatura",
-      "location": "Miraflores, Lima",
-      "contact": "WhatsApp 934 737 929",
-      "wa": "51934737929",
-      "url": "https://cachorrosperu.pe/categoria/raza-miniatura/",
-      "source": "premium_kennel",
-      "notes": "Precio base S/2,500. Colores chocolate (S/4,800) y rojo (S/5,500) EXCEDEN presupuesto. Preguntar por apricot o marron en precio base.",
-      "badges": [
-        "criadero_oficial",
-        "pedigree",
-        "vacunas",
-        "criadero_verificado"
-      ],
-      "status": "consultar",
-      "qpvBase": 90,
-      "bonuses": [
-        "color_prioritario",
-        "tamano_ideal",
-        "criador_verificado",
-        "vacunas",
-        "pedigree"
-      ],
-      "penalties": [
-        "precio_alto_sin_pedigree"
-      ],
-      "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-16",
+      "qpv": 115,
+      "rank": 1
     },
     {
       "id": 7,
       "title": "Poodle Enano Apricot - Puppy Toy Peru",
       "subtitle": "Puppy Toy Peru · Los Olivos",
       "type": "venta",
-      "price": 3500,
+      "price": 2025,
       "color": "apricot",
       "size": "enano",
       "location": "Los Olivos, Lima",
@@ -218,39 +68,305 @@
       ],
       "penalties": [],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-17",
+      "qpv": 110,
+      "rank": 2
     },
     {
-      "id": 8,
-      "title": "Poodle Apricot Rojo - Lima Pets",
-      "subtitle": "Lima Pets Peru · Cieneguilla",
+      "id": 6,
+      "title": "Poodle Toy - Premium Kennel (desde S/2,500)",
+      "subtitle": "Premium Kennel · Miraflores",
       "type": "venta",
-      "price": 3500,
-      "color": "rojo",
-      "size": "enano",
-      "location": "Cieneguilla, Lima",
-      "contact": "Web LimaPetsPeru.com",
-      "wa": "",
-      "url": "https://limapetsperu.com/producto/poodle-apricot-rojo/",
-      "source": "lima_pets",
-      "notes": "Elegantes y juguetones. Criadero en Cieneguilla. Consultar disponibilidad antes de visitar.",
+      "price": 2024,
+      "color": "apricot",
+      "size": "miniatura",
+      "location": "Miraflores, Lima",
+      "contact": "WhatsApp 934 737 929",
+      "wa": "51934737929",
+      "url": "https://cachorrosperu.pe/categoria/raza-miniatura/",
+      "source": "premium_kennel",
+      "notes": "Precio base S/2,500. Colores chocolate (S/4,800) y rojo (S/5,500) EXCEDEN presupuesto. Preguntar por apricot o marron en precio base.",
       "badges": [
         "criadero_oficial",
-        "vacunas"
+        "pedigree",
+        "vacunas",
+        "criadero_verificado"
       ],
       "status": "consultar",
-      "qpvBase": 75,
+      "qpvBase": 90,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado",
+        "vacunas",
+        "pedigree"
+      ],
+      "penalties": [
+        "precio_alto_sin_pedigree"
+      ],
+      "addedAt": "2026-06-10",
+      "lastChecked": "2026-06-17",
+      "qpv": 105,
+      "rank": 3
+    },
+    {
+      "id": 1,
+      "title": "Poodle Enano Macho - Ultimo Bebe",
+      "subtitle": "Familia Huellitas · Lima",
+      "type": "adopcion",
+      "price": 0,
+      "color": "apricot",
+      "size": "enano",
+      "location": "Lima",
+      "contact": "TikTok @familia.huellitas17",
+      "wa": "",
+      "url": "https://www.tiktok.com/@familia.huellitas17/video/7648863250624285960",
+      "source": "tiktok",
+      "notes": "Publicado 7 junio 2026. Machito enano, ultimo bebe disponible. Contactar por DM.",
+      "badges": [
+        "publicado_reciente",
+        "lima_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 100,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal"
+      ],
+      "penalties": [
+        "sin_wa"
+      ],
+      "addedAt": "2026-06-10",
+      "lastChecked": "2026-06-16",
+      "qpv": 100,
+      "rank": 4
+    },
+    {
+      "id": 2,
+      "title": "Mini Caniches en Adopcion Gratuita",
+      "subtitle": "Rescate Lima · Animales Surco",
+      "type": "adopcion",
+      "price": 0,
+      "color": "marron",
+      "size": "enano",
+      "location": "Surco, Lima",
+      "contact": "TikTok @animalsurco24oficial",
+      "wa": "",
+      "url": "https://www.tiktok.com/@animalsurco24oficial/video/7479197864405568773",
+      "source": "tiktok",
+      "notes": "Cachorros pequenos en adopcion gratuita Lima. Contactar directamente por la cuenta.",
+      "badges": [
+        "lima_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 100,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal"
+      ],
+      "penalties": [
+        "sin_wa"
+      ],
+      "addedAt": "2026-06-10",
+      "lastChecked": "2026-06-16",
+      "qpv": 100,
+      "rank": 5
+    },
+    {
+      "id": 3,
+      "title": "Machito Poodle Apricot Enano",
+      "subtitle": "Grupo Poodle Lima Peru",
+      "type": "adopcion",
+      "price": 0,
+      "color": "apricot",
+      "size": "enano",
+      "location": "Lima",
+      "contact": "Facebook Poodle Lima Peru",
+      "wa": "",
+      "url": "https://www.facebook.com/groups/862034868948734/",
+      "source": "facebook",
+      "notes": "Machito apricot enano disponible. Publicacion en grupo oficial.",
+      "badges": [
+        "lima_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 100,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal"
+      ],
+      "penalties": [
+        "sin_wa"
+      ],
+      "addedAt": "2026-06-10",
+      "lastChecked": "2026-06-16",
+      "qpv": 100,
+      "rank": 6
+    },
+    {
+      "id": 4,
+      "title": "Caniche Minitoy en Adopcion - Caso Especial",
+      "subtitle": "Rescate con compromiso",
+      "type": "adopcion",
+      "price": 0,
+      "color": "marron",
+      "size": "miniatura",
+      "location": "Lima",
+      "contact": "Instagram DM",
+      "wa": "",
+      "url": "https://www.instagram.com/p/DUjSSXojOtq/",
+      "source": "instagram",
+      "notes": "Caniche mini de 2,5 kg. Adopcion con formulario y compromiso responsable.",
+      "badges": [
+        "caso_especial"
+      ],
+      "status": "consultar",
+      "qpvBase": 100,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal"
+      ],
+      "penalties": [
+        "sin_wa"
+      ],
+      "addedAt": "2026-06-10",
+      "lastChecked": "2026-06-16",
+      "qpv": 100,
+      "rank": 7
+    },
+    {
+      "id": 12,
+      "title": "Cachorros Apricot SJM - Padres Presentes",
+      "subtitle": "Criador particular · San Juan Miraflores",
+      "type": "venta",
+      "price": 19,
+      "color": "apricot",
+      "size": "enano",
+      "location": "SJM, Lima",
+      "contact": "WhatsApp 930 404 894",
+      "wa": "51930404894",
+      "url": "https://www.facebook.com/groups/1546254429514430/",
+      "source": "facebook",
+      "notes": "1 mes 10 dias, ya vacunados. Padres presentes para verificar tamano adulto.",
+      "badges": [
+        "vacunas",
+        "padres_presentes"
+      ],
+      "status": "disponible",
+      "qpvBase": 85,
       "bonuses": [
         "color_prioritario",
         "tamano_ideal",
         "vacunas"
       ],
+      "penalties": [],
+      "addedAt": "2026-06-10",
+      "lastChecked": "2026-06-17",
+      "qpv": 100,
+      "rank": 8
+    },
+    {
+      "id": 13,
+      "title": "Poodle Mini Cachorro - SJL",
+      "subtitle": "Particular · San Juan de Lurigancho",
+      "type": "venta",
+      "price": 2500,
+      "color": "marron",
+      "size": "miniatura",
+      "location": "SJL, Lima",
+      "contact": "WhatsApp 991 296 543",
+      "wa": "51991296543",
+      "url": "https://www.facebook.com/groups/1546254429514430/",
+      "source": "facebook",
+      "notes": "Criador particular en SJL. Consultar vacunas, desparasitacion y tamano adulto.",
+      "badges": [
+        "lima_verificado"
+      ],
+      "status": "disponible",
+      "qpvBase": 90,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal"
+      ],
+      "penalties": [],
+      "addedAt": "2026-06-10",
+      "lastChecked": "2026-06-16",
+      "qpv": 100,
+      "rank": 9
+    },
+    {
+      "id": 14,
+      "title": "Poodle Miniatura Apricot - Lima Onepets",
+      "subtitle": "Lima Onepets · San Martin de Porres",
+      "type": "venta",
+      "price": 2025,
+      "color": "apricot",
+      "size": "miniatura",
+      "location": "San Martin de Porres, Lima",
+      "contact": "WhatsApp 989 886 841",
+      "wa": "51989886841",
+      "url": "https://limaonepets.com",
+      "source": "lima_onepets",
+      "notes": "Criador con videollamada previa. Apricot miniatura. Verificar disponibilidad.",
+      "badges": [
+        "criadero_oficial",
+        "vacunas",
+        "criadero_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 85,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado",
+        "vacunas"
+      ],
       "penalties": [
-        "sin_wa",
         "enlace_generico"
       ],
+      "addedAt": "2026-06-13",
+      "lastChecked": "2026-06-17",
+      "qpv": 100,
+      "rank": 10
+    },
+    {
+      "id": 10,
+      "title": "Poodle Enano Marron Chocolate - Puppy Toy Peru",
+      "subtitle": "Puppy Toy Peru · Los Olivos",
+      "type": "venta",
+      "price": 2025,
+      "color": "marron",
+      "size": "enano",
+      "location": "Los Olivos, Lima",
+      "contact": "WhatsApp 920 688 338",
+      "wa": "51920688338",
+      "url": "https://puppytoyperu.com/tienda/",
+      "source": "puppy_toy_peru",
+      "notes": "Color marron chocolate exclusivo. Pedigree completo, padres campeones. Garantia de salud incluida. Precio confirmado S/4,000.",
+      "badges": [
+        "criadero_certificado",
+        "pedigree",
+        "vacunas",
+        "garantia",
+        "criadero_verificado"
+      ],
+      "status": "disponible",
+      "qpvBase": 70,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado",
+        "vacunas",
+        "pedigree",
+        "garantia_salud"
+      ],
+      "penalties": [
+        "precio_alto_sin_pedigree"
+      ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-17",
+      "qpv": 90,
+      "rank": 11
     },
     {
       "id": 9,
@@ -283,44 +399,427 @@
         "sin_wa"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-17",
+      "qpv": 85,
+      "rank": 12
     },
     {
-      "id": 10,
-      "title": "Poodle Enano Marron Chocolate - Puppy Toy Peru",
-      "subtitle": "Puppy Toy Peru · Los Olivos",
+      "id": 20,
+      "title": "POODLE ENANO BEIGE",
+      "subtitle": "Disponible en Puppy Toy Peru (tienda)",
       "type": "venta",
-      "price": 4000,
-      "color": "marron",
+      "price": 0,
+      "color": "apricot",
       "size": "enano",
-      "location": "Los Olivos, Lima",
-      "contact": "WhatsApp 920 688 338",
-      "wa": "51920688338",
-      "url": "https://puppytoyperu.com/tienda/",
+      "location": "Lima",
+      "contact": "puppy_toy_peru",
+      "wa": "",
+      "url": "https://puppytoyperu.com/producto/poodle-enano-beige/",
       "source": "puppy_toy_peru",
-      "notes": "Color marron chocolate exclusivo. Pedigree completo, padres campeones. Garantia de salud incluida. Precio confirmado S/4,000.",
+      "notes": "Disponible en Puppy Toy Peru (tienda)",
       "badges": [
-        "criadero_certificado",
-        "pedigree",
-        "vacunas",
-        "garantia",
-        "criadero_verificado"
+        "lima_verificado"
       ],
-      "status": "disponible",
-      "qpvBase": 70,
+      "status": "consultar",
+      "qpvBase": 75,
       "bonuses": [
         "color_prioritario",
         "tamano_ideal",
-        "criador_verificado",
-        "vacunas",
-        "pedigree",
-        "garantia_salud"
+        "criador_verificado"
       ],
       "penalties": [
-        "precio_alto_sin_pedigree"
+        "enlace_generico"
+      ],
+      "addedAt": "2026-06-17",
+      "lastChecked": "2026-06-17",
+      "qpv": 85,
+      "rank": 13
+    },
+    {
+      "id": 24,
+      "title": "POODLE ENANO BLANCO",
+      "subtitle": "Disponible en Puppy Toy Peru (tienda)",
+      "type": "venta",
+      "price": 0,
+      "color": "apricot",
+      "size": "enano",
+      "location": "Lima",
+      "contact": "puppy_toy_peru",
+      "wa": "",
+      "url": "https://puppytoyperu.com/producto/poodle-enano-blanco/",
+      "source": "puppy_toy_peru",
+      "notes": "Disponible en Puppy Toy Peru (tienda)",
+      "badges": [
+        "lima_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 75,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado"
+      ],
+      "penalties": [
+        "enlace_generico"
+      ],
+      "addedAt": "2026-06-17",
+      "lastChecked": "2026-06-17",
+      "qpv": 85,
+      "rank": 14
+    },
+    {
+      "id": 29,
+      "title": "POODLE ENANO EXÓTICO O MERLE",
+      "subtitle": "Disponible en Puppy Toy Peru (tienda)",
+      "type": "venta",
+      "price": 0,
+      "color": "apricot",
+      "size": "enano",
+      "location": "Lima",
+      "contact": "puppy_toy_peru",
+      "wa": "",
+      "url": "https://puppytoyperu.com/producto/poodle-enano-exotico-o-merle/",
+      "source": "puppy_toy_peru",
+      "notes": "Disponible en Puppy Toy Peru (tienda)",
+      "badges": [
+        "lima_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 75,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado"
+      ],
+      "penalties": [
+        "enlace_generico"
+      ],
+      "addedAt": "2026-06-17",
+      "lastChecked": "2026-06-17",
+      "qpv": 85,
+      "rank": 15
+    },
+    {
+      "id": 35,
+      "title": "POODLE ENANO NEGRO",
+      "subtitle": "Disponible en Puppy Toy Peru (tienda)",
+      "type": "venta",
+      "price": 0,
+      "color": "apricot",
+      "size": "enano",
+      "location": "Lima",
+      "contact": "puppy_toy_peru",
+      "wa": "",
+      "url": "https://puppytoyperu.com/producto/poodle-enano-negro/",
+      "source": "puppy_toy_peru",
+      "notes": "Disponible en Puppy Toy Peru (tienda)",
+      "badges": [
+        "lima_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 75,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado"
+      ],
+      "penalties": [
+        "enlace_generico"
+      ],
+      "addedAt": "2026-06-17",
+      "lastChecked": "2026-06-17",
+      "qpv": 85,
+      "rank": 16
+    },
+    {
+      "id": 42,
+      "title": "POODLE ENANO ROJO",
+      "subtitle": "Disponible en Puppy Toy Peru (tienda)",
+      "type": "venta",
+      "price": 0,
+      "color": "rojo",
+      "size": "enano",
+      "location": "Lima",
+      "contact": "puppy_toy_peru",
+      "wa": "",
+      "url": "https://puppytoyperu.com/producto/poodle-enano-rojo/",
+      "source": "puppy_toy_peru",
+      "notes": "Disponible en Puppy Toy Peru (tienda)",
+      "badges": [
+        "lima_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 75,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado"
+      ],
+      "penalties": [
+        "enlace_generico"
+      ],
+      "addedAt": "2026-06-17",
+      "lastChecked": "2026-06-17",
+      "qpv": 85,
+      "rank": 17
+    },
+    {
+      "id": 50,
+      "title": "POODLE MINI TOY APRICOT",
+      "subtitle": "Disponible en Puppy Toy Peru (tienda)",
+      "type": "venta",
+      "price": 0,
+      "color": "apricot",
+      "size": "miniatura",
+      "location": "Lima",
+      "contact": "puppy_toy_peru",
+      "wa": "",
+      "url": "https://puppytoyperu.com/producto/poodle-mini-toy-apricot/",
+      "source": "puppy_toy_peru",
+      "notes": "Disponible en Puppy Toy Peru (tienda)",
+      "badges": [
+        "lima_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 75,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado"
+      ],
+      "penalties": [
+        "enlace_generico"
+      ],
+      "addedAt": "2026-06-17",
+      "lastChecked": "2026-06-17",
+      "qpv": 85,
+      "rank": 18
+    },
+    {
+      "id": 59,
+      "title": "POODLE MINI TOY BEIGE",
+      "subtitle": "Disponible en Puppy Toy Peru (tienda)",
+      "type": "venta",
+      "price": 0,
+      "color": "apricot",
+      "size": "miniatura",
+      "location": "Lima",
+      "contact": "puppy_toy_peru",
+      "wa": "",
+      "url": "https://puppytoyperu.com/producto/poodle-mini-toy-beige/",
+      "source": "puppy_toy_peru",
+      "notes": "Disponible en Puppy Toy Peru (tienda)",
+      "badges": [
+        "lima_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 75,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado"
+      ],
+      "penalties": [
+        "enlace_generico"
+      ],
+      "addedAt": "2026-06-17",
+      "lastChecked": "2026-06-17",
+      "qpv": 85,
+      "rank": 19
+    },
+    {
+      "id": 69,
+      "title": "POODLE MINI TOY BLANCO",
+      "subtitle": "Disponible en Puppy Toy Peru (tienda)",
+      "type": "venta",
+      "price": 0,
+      "color": "apricot",
+      "size": "miniatura",
+      "location": "Lima",
+      "contact": "puppy_toy_peru",
+      "wa": "",
+      "url": "https://puppytoyperu.com/producto/poodle-mini-toy-blanco/",
+      "source": "puppy_toy_peru",
+      "notes": "Disponible en Puppy Toy Peru (tienda)",
+      "badges": [
+        "lima_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 75,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado"
+      ],
+      "penalties": [
+        "enlace_generico"
+      ],
+      "addedAt": "2026-06-17",
+      "lastChecked": "2026-06-17",
+      "qpv": 85,
+      "rank": 20
+    },
+    {
+      "id": 80,
+      "title": "POODLE MINI TOY MARRON",
+      "subtitle": "Disponible en Puppy Toy Peru (tienda)",
+      "type": "venta",
+      "price": 0,
+      "color": "marron",
+      "size": "miniatura",
+      "location": "Lima",
+      "contact": "puppy_toy_peru",
+      "wa": "",
+      "url": "https://puppytoyperu.com/producto/poodle-mini-toy-marron/",
+      "source": "puppy_toy_peru",
+      "notes": "Disponible en Puppy Toy Peru (tienda)",
+      "badges": [
+        "lima_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 75,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado"
+      ],
+      "penalties": [
+        "enlace_generico"
+      ],
+      "addedAt": "2026-06-17",
+      "lastChecked": "2026-06-17",
+      "qpv": 85,
+      "rank": 21
+    },
+    {
+      "id": 92,
+      "title": "POODLE MINI TOY NEGRO",
+      "subtitle": "Disponible en Puppy Toy Peru (tienda)",
+      "type": "venta",
+      "price": 0,
+      "color": "apricot",
+      "size": "miniatura",
+      "location": "Lima",
+      "contact": "puppy_toy_peru",
+      "wa": "",
+      "url": "https://puppytoyperu.com/producto/poodle-mini-toy-negro/",
+      "source": "puppy_toy_peru",
+      "notes": "Disponible en Puppy Toy Peru (tienda)",
+      "badges": [
+        "lima_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 75,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado"
+      ],
+      "penalties": [
+        "enlace_generico"
+      ],
+      "addedAt": "2026-06-17",
+      "lastChecked": "2026-06-17",
+      "qpv": 85,
+      "rank": 22
+    },
+    {
+      "id": 105,
+      "title": "VENTA DE CACHORROS",
+      "subtitle": "Disponible en Lima Onepets",
+      "type": "venta",
+      "price": 0,
+      "color": "apricot",
+      "size": "miniatura",
+      "location": "Lima",
+      "contact": "lima_onepets",
+      "wa": "",
+      "url": "https://limaonepets.com/cachorros/",
+      "source": "lima_onepets",
+      "notes": "Disponible en Lima Onepets",
+      "badges": [
+        "lima_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 75,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado"
+      ],
+      "penalties": [
+        "enlace_generico"
+      ],
+      "addedAt": "2026-06-17",
+      "lastChecked": "2026-06-17",
+      "qpv": 85,
+      "rank": 23
+    },
+    {
+      "id": 119,
+      "title": "POODLE STANDARD",
+      "subtitle": "Disponible en Central Pets Peru",
+      "type": "venta",
+      "price": 0,
+      "color": "apricot",
+      "size": "miniatura",
+      "location": "Lima",
+      "contact": "central_pets",
+      "wa": "",
+      "url": "https://centralpetsperu.com/product/poodle-standard/",
+      "source": "central_pets",
+      "notes": "Disponible en Central Pets Peru",
+      "badges": [
+        "lima_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 75,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado"
+      ],
+      "penalties": [
+        "enlace_generico"
+      ],
+      "addedAt": "2026-06-17",
+      "lastChecked": "2026-06-17",
+      "qpv": 85,
+      "rank": 24
+    },
+    {
+      "id": 8,
+      "title": "Poodle Apricot Rojo - Lima Pets",
+      "subtitle": "Lima Pets Peru · Cieneguilla",
+      "type": "venta",
+      "price": 3500,
+      "color": "rojo",
+      "size": "enano",
+      "location": "Cieneguilla, Lima",
+      "contact": "Web LimaPetsPeru.com",
+      "wa": "",
+      "url": "https://limapetsperu.com/producto/poodle-apricot-rojo/",
+      "source": "lima_pets",
+      "notes": "Elegantes y juguetones. Criadero en Cieneguilla. Consultar disponibilidad antes de visitar.",
+      "badges": [
+        "criadero_oficial",
+        "vacunas"
+      ],
+      "status": "consultar",
+      "qpvBase": 75,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "vacunas"
+      ],
+      "penalties": [
+        "sin_wa",
+        "enlace_generico"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-17",
+      "qpv": 70,
+      "rank": 25
     },
     {
       "id": 11,
@@ -353,96 +852,69 @@
         "precio_alto_sin_pedigree"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-17",
+      "qpv": 65,
+      "rank": 26
     },
     {
-      "id": 12,
-      "title": "Cachorros Apricot SJM - Padres Presentes",
-      "subtitle": "Criador particular · San Juan Miraflores",
+      "id": 15,
+      "title": "Cachorros Caniche / Poodle disponibles",
+      "subtitle": "Disponible en Puppy Toy Peru",
       "type": "venta",
-      "price": 2800,
+      "price": 250000,
       "color": "apricot",
-      "size": "enano",
-      "location": "SJM, Lima",
-      "contact": "WhatsApp 930 404 894",
-      "wa": "51930404894",
-      "url": "https://www.facebook.com/groups/1546254429514430/",
-      "source": "facebook",
-      "notes": "1 mes 10 dias, ya vacunados. Padres presentes para verificar tamano adulto.",
-      "badges": [
-        "vacunas",
-        "padres_presentes"
-      ],
-      "status": "disponible",
-      "qpvBase": 85,
-      "bonuses": [
-        "color_prioritario",
-        "tamano_ideal",
-        "vacunas"
-      ],
-      "penalties": [],
-      "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
-    },
-    {
-      "id": 13,
-      "title": "Poodle Mini Cachorro - SJL",
-      "subtitle": "Particular · San Juan de Lurigancho",
-      "type": "venta",
-      "price": 2500,
-      "color": "marron",
       "size": "miniatura",
-      "location": "SJL, Lima",
-      "contact": "WhatsApp 991 296 543",
-      "wa": "51991296543",
-      "url": "https://www.facebook.com/groups/1546254429514430/",
-      "source": "facebook",
-      "notes": "Criador particular en SJL. Consultar vacunas, desparasitacion y tamano adulto.",
+      "location": "Lima",
+      "contact": "puppy_toy_peru",
+      "wa": "",
+      "url": "https://puppytoyperuoficial.com/cachorros.html",
+      "source": "puppy_toy_peru",
+      "notes": "Disponible en Puppy Toy Peru",
       "badges": [
         "lima_verificado"
       ],
-      "status": "disponible",
-      "qpvBase": 90,
-      "bonuses": [
-        "color_prioritario",
-        "tamano_ideal"
-      ],
-      "penalties": [],
-      "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
-    },
-    {
-      "id": 14,
-      "title": "Poodle Miniatura Apricot - Lima Onepets",
-      "subtitle": "Lima Onepets · San Martin de Porres",
-      "type": "venta",
-      "price": 2800,
-      "color": "apricot",
-      "size": "miniatura",
-      "location": "San Martin de Porres, Lima",
-      "contact": "WhatsApp 989 886 841",
-      "wa": "51989886841",
-      "url": "https://limaonepets.com",
-      "source": "lima_onepets",
-      "notes": "Criador con videollamada previa. Apricot miniatura. Verificar disponibilidad.",
-      "badges": [
-        "criadero_oficial",
-        "vacunas",
-        "criadero_verificado"
-      ],
       "status": "consultar",
-      "qpvBase": 85,
+      "qpvBase": 0,
       "bonuses": [
         "color_prioritario",
         "tamano_ideal",
-        "criador_verificado",
-        "vacunas"
+        "criador_verificado"
       ],
-      "penalties": [
-        "enlace_generico"
+      "penalties": [],
+      "addedAt": "2026-06-17",
+      "lastChecked": "2026-06-17",
+      "qpv": 20,
+      "rank": 27
+    },
+    {
+      "id": 17,
+      "title": "POODLE TOY NEGRO",
+      "subtitle": "Disponible en Puppy Toy Peru",
+      "type": "venta",
+      "price": 250000,
+      "color": "apricot",
+      "size": "miniatura",
+      "location": "Lima",
+      "contact": "puppy_toy_peru",
+      "wa": "",
+      "url": "https://puppytoyperuoficial.com/cachorros.html/#",
+      "source": "puppy_toy_peru",
+      "notes": "Disponible en Puppy Toy Peru",
+      "badges": [
+        "lima_verificado"
       ],
-      "addedAt": "2026-06-13",
-      "lastChecked": "2026-06-16"
+      "status": "consultar",
+      "qpvBase": 0,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado"
+      ],
+      "penalties": [],
+      "addedAt": "2026-06-17",
+      "lastChecked": "2026-06-17",
+      "qpv": 20,
+      "rank": 28
     }
   ]
 }
