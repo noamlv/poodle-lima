@@ -5,6 +5,11 @@
         "price": 2024,
         "date": "2026-06-17",
         "previousPrice": 2500
+      },
+      {
+        "price": 2024,
+        "date": "2026-06-18",
+        "previousPrice": 2024
       }
     ],
     "7": [
@@ -12,6 +17,11 @@
         "price": 2025,
         "date": "2026-06-17",
         "previousPrice": 3500
+      },
+      {
+        "price": 2025,
+        "date": "2026-06-18",
+        "previousPrice": 2025
       }
     ],
     "10": [
@@ -19,6 +29,11 @@
         "price": 2025,
         "date": "2026-06-17",
         "previousPrice": 4000
+      },
+      {
+        "price": 2025,
+        "date": "2026-06-18",
+        "previousPrice": 2025
       }
     ],
     "12": [
