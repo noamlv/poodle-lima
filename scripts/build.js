@@ -234,6 +234,19 @@ header p{color:#6c757d;font-size:.9rem}
 footer{text-align:center;padding:24px 20px;color:#adb5bd;font-size:.75rem;border-top:1px solid #e9ecef;margin-top:30px}
 footer a{color:#6c757d;text-decoration:none}
 footer a:hover{text-decoration:underline}
+.contact-area{position:relative;display:inline-flex;cursor:pointer}
+.contact-badge{font-size:.68rem;padding:2px 9px;border-radius:8px;font-weight:600;border:1px solid;transition:all .12s;white-space:nowrap}
+.contact-badge.pendiente{background:#f8f9fa;color:#6c757d;border-color:#dee2e6}
+.contact-badge.pendiente:hover{background:#e9ecef}
+.contact-badge.contactado{background:#cce5ff;color:#004085;border-color:#b8daff}
+.contact-badge.respondio{background:#d4edda;color:#155724;border-color:#c3e6cb}
+.contact-badge.negociando{background:#fff3cd;color:#856404;border-color:#ffeaa7}
+.contact-badge.no_disponible{background:#f8d7da;color:#721c24;border-color:#f5c6cb}
+.contact-menu{display:none;position:absolute;top:100%;left:0;z-index:10;background:#fff;border:1px solid #dee2e6;border-radius:8px;padding:4px;margin-top:4px;box-shadow:0 4px 12px rgba(0,0,0,.1);min-width:145px}
+.contact-menu.show{display:block}
+.contact-menu-item{padding:5px 10px;font-size:.74rem;cursor:pointer;border-radius:5px;color:#495057;transition:background .1s;white-space:nowrap}
+.contact-menu-item:hover{background:#f8f9fa}
+.contact-menu-item.activo{font-weight:600;background:#e9ecef}
 @media(max-width:600px){
   header h1{font-size:1.3rem}
   .poodle-header{flex-direction:column}
@@ -285,6 +298,16 @@ footer a:hover{text-decoration:underline}
   </div>
   <div class="search-box">
     <input class="search-input" id="search-input" type="text" placeholder="Buscar por nombre, criador, ubicacion..." autocomplete="off">
+  </div>
+  <div class="controls" style="margin-top:-8px">
+    <div class="filtros" id="filtros-contacto">
+      <button class="filtro-btn activo" data-cfiltro="todos">Todos</button>
+      <button class="filtro-btn" data-cfiltro="pendiente">Pendiente</button>
+      <button class="filtro-btn" data-cfiltro="contactado">Contactado</button>
+      <button class="filtro-btn" data-cfiltro="respondio">Respondio</button>
+      <button class="filtro-btn" data-cfiltro="negociando">Negociando</button>
+      <button class="filtro-btn" data-cfiltro="no_disponible">No disponible</button>
+    </div>
   </div>
   <div class="lista-poodles" id="lista-poodles">
     ${cardsHTML}
@@ -340,11 +363,25 @@ const poodlesData = ${JSON.stringify(poodles.map(p => ({
   price: p.price, color: p.color, size: p.size, location: p.location,
   contact: p.contact, wa: p.wa, url: p.url, notes: p.notes,
   badges: p.badges, status: p.status, qpv: p.qpv, qpvBase: p.qpvBase,
-  bonuses: p.bonuses, penalties: p.penalties
+  bonuses: p.bonuses, penalties: p.penalties, contactStatus: p.contactStatus || 'pendiente'
 })))};
+
+const CS_LABELS = { pendiente: 'Pendiente', contactado: 'Contactado', respondio: 'Respondio', negociando: 'Negociando', no_disponible: 'No disponible' };
+const CS_KEYS = Object.keys(CS_LABELS);
+
+let contactStatuses = {};
+function loadContactStatuses() {
+  try { const s = localStorage.getItem('poodleCS'); if (s) contactStatuses = JSON.parse(s); } catch(e) {}
+  poodlesData.forEach(p => { if (contactStatuses[p.id]) p.contactStatus = contactStatuses[p.id]; else { p.contactStatus = 'pendiente'; contactStatuses[p.id] = 'pendiente'; } });
+}
+function saveContactStatuses() {
+  try { localStorage.setItem('poodleCS', JSON.stringify(contactStatuses)); } catch(e) {}
+}
+loadContactStatuses();
 
 let currentSort = 'qpv';
 let currentFiltro = 'todos';
+let currentCFiltro = 'todos';
 let searchTerm = '';
 
 const BONUSES = ${JSON.stringify(BONUSES)};
@@ -359,6 +396,9 @@ function render() {
     if (['marron','apricot','rojo'].includes(currentFiltro)) return p.color === currentFiltro;
     if (['enano','miniatura'].includes(currentFiltro)) return p.size === currentFiltro;
     return true;
+  }).filter(p => {
+    if (currentCFiltro === 'todos') return true;
+    return p.contactStatus === currentCFiltro;
   });
   if (searchTerm) {
     const t = searchTerm.toLowerCase();
@@ -393,12 +433,34 @@ function render() {
     const qpvPenalties = (p.penalties||[]).map(pn => PENALTIES[pn] ? '<div class="tt-line"><span class="tt-negativo">'+PENALTIES[pn]+'</span><span>'+pn.replace(/_/g,' ')+'</span></div>' : '').join('');
     const msgWA = p.wa ? 'https://wa.me/'+p.wa+'?text='+encodeURIComponent('Hola, vi tu publicacion del '+p.title+'. Me interesa.') : '';
     const contactoHTML = p.wa ? '<a href="'+msgWA+'" target="_blank" class="btn-contacto">WhatsApp</a>' : '<a href="'+p.url+'" target="_blank" class="btn-contacto">Contactar</a>';
-    return '<div class="poodle-card '+cardClass+'"><div class="poodle-header"><div class="poodle-rank '+rankClass+'">'+rank+'</div><div class="poodle-info"><div class="poodle-title">'+escHtml(p.title)+'</div><div class="poodle-subtitle">'+escHtml(p.subtitle)+'</div><div class="poodle-meta"><span class="meta-badge tipo-'+p.type+'">'+tipoLabel+'</span><span class="meta-badge color-'+p.color+'">'+colorLabel+'</span><span class="meta-badge tamano-'+p.size+'">'+tamanoLabel+'</span><span class="meta-badge">'+escHtml(p.location)+'</span><span class="'+estadoClass+'">'+estadoLabel+'</span></div></div><div class="precio-box">'+precioHTML+'<div class="qpv-area '+qpvClass+'" onclick="toggleQPV(\'qt-'+p.id+'\')"><div class="qpv-score">QPV '+p.qpv+'</div><div class="qpv-bar"><div class="qpv-fill" style="width:'+Math.min(100,p.qpv)+'%"></div></div><div class="qpv-tooltip" id="qt-'+p.id+'"><div class="tt-line"><span>Base</span><span>'+(p.qpvBase||0)+'</span></div>'+qpvBonuses+qpvPenalties+'<div class="tt-line tt-total"><span>Total</span><span>'+p.qpv+'</span></div></div></div></div></div>'+(verifHTML?'<div class="badges-verif">'+verifHTML+'</div>':'')+(p.notes?'<div class="notas">'+escHtml(p.notes)+'</div>':'')+'<div class="poodle-footer">'+contactoHTML+'<a href="'+escHtml(p.url)+'" target="_blank" class="btn-link">Ver publicacion</a></div></div>';
+    return '<div class="poodle-card '+cardClass+'"><div class="poodle-header"><div class="poodle-rank '+rankClass+'">'+rank+'</div><div class="poodle-info"><div class="poodle-title">'+escHtml(p.title)+'</div><div class="poodle-subtitle">'+escHtml(p.subtitle)+'</div><div class="poodle-meta"><span class="meta-badge tipo-'+p.type+'">'+tipoLabel+'</span><span class="meta-badge color-'+p.color+'">'+colorLabel+'</span><span class="meta-badge tamano-'+p.size+'">'+tamanoLabel+'</span><span class="meta-badge">'+escHtml(p.location)+'</span><span class="'+estadoClass+'">'+estadoLabel+'</span></div></div><div class="precio-box">'+precioHTML+'<div class="qpv-area '+qpvClass+'" onclick="toggleQPV(\'qt-'+p.id+'\')"><div class="qpv-score">QPV '+p.qpv+'</div><div class="qpv-bar"><div class="qpv-fill" style="width:'+Math.min(100,p.qpv)+'%"></div></div><div class="qpv-tooltip" id="qt-'+p.id+'"><div class="tt-line"><span>Base</span><span>'+(p.qpvBase||0)+'</span></div>'+qpvBonuses+qpvPenalties+'<div class="tt-line tt-total"><span>Total</span><span>'+p.qpv+'</span></div></div></div></div></div>'+(verifHTML?'<div class="badges-verif">'+verifHTML+'</div>':'')+'<div style="display:flex;align-items:center;gap:6px;margin-top:6px"><span style="font-size:.68rem;color:#6c757d">Seguimiento:</span><div class="contact-area" onclick="event.stopPropagation();toggleContactMenu(\'cm-'+p.id+'\')"><span class="contact-badge '+p.contactStatus+'">'+(CS_LABELS[p.contactStatus]||'Pendiente')+'</span><div class="contact-menu" id="cm-'+p.id+'">'+CS_KEYS.map(function(kk){return '<div class="contact-menu-item'+(p.contactStatus===kk?' activo':'')+'" onclick="event.stopPropagation();setContact('+p.id+',\''+kk+'\')">'+(CS_LABELS[kk])+'</div>'}).join('')+'</div></div></div>'+(p.notes?'<div class="notas">'+escHtml(p.notes)+'</div>':'')+'<div class="poodle-footer">'+contactoHTML+'<a href="'+escHtml(p.url)+'" target="_blank" class="btn-link">Ver publicacion</a></div></div>';
   }).join('');
   updateStats(filtered);
 }
 
 function escHtml(s) { const d=document.createElement('div'); d.textContent=s||''; return d.innerHTML; }
+
+function toggleContactMenu(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const was = el.classList.contains('show');
+  document.querySelectorAll('.contact-menu.show').forEach(e => e.classList.remove('show'));
+  if (!was) el.classList.add('show');
+}
+
+function setContact(id, status) {
+  contactStatuses[id] = status;
+  const p = poodlesData.find(x => x.id === id);
+  if (p) p.contactStatus = status;
+  saveContactStatuses();
+  document.querySelectorAll('.contact-menu.show').forEach(e => e.classList.remove('show'));
+  render();
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.qpv-area')) document.querySelectorAll('.qpv-tooltip.show').forEach(el => el.classList.remove('show'));
+  if (!e.target.closest('.contact-area')) document.querySelectorAll('.contact-menu.show').forEach(el => el.classList.remove('show'));
+});
 
 function toggleQPV(id) {
   const el = document.getElementById(id);
@@ -408,7 +470,7 @@ function toggleQPV(id) {
   if(!was)el.classList.add('show');
 }
 
-document.addEventListener('click', function(e) { if(!e.target.closest('.qpv-area')) document.querySelectorAll('.qpv-tooltip.show').forEach(el=>el.classList.remove('show')); });
+
 
 function updateStats(arr) {
   document.getElementById('stat-total').textContent = arr.length;
@@ -421,11 +483,19 @@ function updateStats(arr) {
   document.getElementById('stat-qpv-avg').textContent = arr.length>0?avg:'\u2014';
 }
 
-document.querySelectorAll('.filtro-btn').forEach(btn => {
+document.querySelectorAll('#filtros .filtro-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.filtro-btn').forEach(b=>b.classList.remove('activo'));
+    document.querySelectorAll('#filtros .filtro-btn').forEach(b=>b.classList.remove('activo'));
     btn.classList.add('activo');
     currentFiltro = btn.dataset.filtro;
+    render();
+  });
+});
+document.querySelectorAll('#filtros-contacto .filtro-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#filtros-contacto .filtro-btn').forEach(b=>b.classList.remove('activo'));
+    btn.classList.add('activo');
+    currentCFiltro = btn.dataset.cfiltro;
     render();
   });
 });

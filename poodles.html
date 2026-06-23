@@ -107,6 +107,19 @@ header p{color:#6c757d;font-size:.9rem}
 footer{text-align:center;padding:24px 20px;color:#adb5bd;font-size:.75rem;border-top:1px solid #e9ecef;margin-top:30px}
 footer a{color:#6c757d;text-decoration:none}
 footer a:hover{text-decoration:underline}
+.contact-area{position:relative;display:inline-flex;cursor:pointer}
+.contact-badge{font-size:.68rem;padding:2px 9px;border-radius:8px;font-weight:600;border:1px solid;transition:all .12s;white-space:nowrap}
+.contact-badge.pendiente{background:#f8f9fa;color:#6c757d;border-color:#dee2e6}
+.contact-badge.pendiente:hover{background:#e9ecef}
+.contact-badge.contactado{background:#cce5ff;color:#004085;border-color:#b8daff}
+.contact-badge.respondio{background:#d4edda;color:#155724;border-color:#c3e6cb}
+.contact-badge.negociando{background:#fff3cd;color:#856404;border-color:#ffeaa7}
+.contact-badge.no_disponible{background:#f8d7da;color:#721c24;border-color:#f5c6cb}
+.contact-menu{display:none;position:absolute;top:100%;left:0;z-index:10;background:#fff;border:1px solid #dee2e6;border-radius:8px;padding:4px;margin-top:4px;box-shadow:0 4px 12px rgba(0,0,0,.1);min-width:145px}
+.contact-menu.show{display:block}
+.contact-menu-item{padding:5px 10px;font-size:.74rem;cursor:pointer;border-radius:5px;color:#495057;transition:background .1s;white-space:nowrap}
+.contact-menu-item:hover{background:#f8f9fa}
+.contact-menu-item.activo{font-weight:600;background:#e9ecef}
 @media(max-width:600px){
   header h1{font-size:1.3rem}
   .poodle-header{flex-direction:column}
@@ -158,6 +171,16 @@ footer a:hover{text-decoration:underline}
   </div>
   <div class="search-box">
     <input class="search-input" id="search-input" type="text" placeholder="Buscar por nombre, criador, ubicacion..." autocomplete="off">
+  </div>
+  <div class="controls" style="margin-top:-8px">
+    <div class="filtros" id="filtros-contacto">
+      <button class="filtro-btn activo" data-cfiltro="todos">Todos</button>
+      <button class="filtro-btn" data-cfiltro="pendiente">Pendiente</button>
+      <button class="filtro-btn" data-cfiltro="contactado">Contactado</button>
+      <button class="filtro-btn" data-cfiltro="respondio">Respondio</button>
+      <button class="filtro-btn" data-cfiltro="negociando">Negociando</button>
+      <button class="filtro-btn" data-cfiltro="no_disponible">No disponible</button>
+    </div>
   </div>
   <div class="lista-poodles" id="lista-poodles">
     
@@ -711,10 +734,24 @@ footer a:hover{text-decoration:underline}
   <p><a href="https://github.com/noamlv/poodle-lima" target="_blank">Dashboard en GitHub</a></p>
 </footer>
 <script>
-const poodlesData = [{"id":5,"title":"Animales en Adopcion Lima - Poodle Apricot","subtitle":"Refugio oficial Lima","type":"adopcion","price":0,"color":"apricot","size":"enano","location":"Lima","contact":"WhatsApp 947 129 125","wa":"51947129125","url":"https://www.instagram.com/animalesenadopcionlima/","notes":"Entregan desparasitado, vacunado, esterilizado y con Simparica + saco de comida.","badges":["vacunas","esterilizado","refugio_oficial"],"status":"disponible","qpv":115,"qpvBase":100,"bonuses":["color_prioritario","tamano_ideal","vacunas"],"penalties":[]},{"id":7,"title":"Poodle Enano Apricot - Puppy Toy Peru","subtitle":"Puppy Toy Peru · Los Olivos","type":"venta","price":3500,"color":"apricot","size":"enano","location":"Los Olivos, Lima","contact":"WhatsApp 920 688 338","wa":"51920688338","url":"https://puppytoyperu.com/tienda/","notes":"Criador con +10 anos experiencia. Pedigree, vacunas, garantia de salud. Envio a todo Peru.","badges":["criadero_certificado","pedigree","vacunas","garantia","criadero_verificado"],"status":"disponible","qpv":110,"qpvBase":75,"bonuses":["color_prioritario","tamano_ideal","criador_verificado","vacunas","pedigree","garantia_salud"],"penalties":[]},{"id":6,"title":"Poodle Toy - Premium Kennel (desde S/2,500)","subtitle":"Premium Kennel · Miraflores","type":"venta","price":2500,"color":"apricot","size":"miniatura","location":"Miraflores, Lima","contact":"WhatsApp 934 737 929","wa":"51934737929","url":"https://cachorrosperu.pe/categoria/raza-miniatura/","notes":"Precio base S/2,500. Colores chocolate (S/4,800) y rojo (S/5,500) EXCEDEN presupuesto. Preguntar por apricot o marron en precio base.","badges":["criadero_oficial","pedigree","vacunas","criadero_verificado"],"status":"consultar","qpv":105,"qpvBase":90,"bonuses":["color_prioritario","tamano_ideal","criador_verificado","vacunas","pedigree"],"penalties":["precio_alto_sin_pedigree"]},{"id":1,"title":"Poodle Enano Macho - Ultimo Bebe","subtitle":"Familia Huellitas · Lima","type":"adopcion","price":0,"color":"apricot","size":"enano","location":"Lima","contact":"TikTok @familia.huellitas17","wa":"","url":"https://www.tiktok.com/@familia.huellitas17/video/7648863250624285960","notes":"Publicado 7 junio 2026. Machito enano, ultimo bebe disponible. Contactar por DM.","badges":["publicado_reciente","lima_verificado"],"status":"consultar","qpv":100,"qpvBase":100,"bonuses":["color_prioritario","tamano_ideal"],"penalties":["sin_wa"]},{"id":2,"title":"Mini Caniches en Adopcion Gratuita","subtitle":"Rescate Lima · Animales Surco","type":"adopcion","price":0,"color":"marron","size":"enano","location":"Surco, Lima","contact":"TikTok @animalsurco24oficial","wa":"","url":"https://www.tiktok.com/@animalsurco24oficial/video/7479197864405568773","notes":"Cachorros pequenos en adopcion gratuita Lima. Contactar directamente por la cuenta.","badges":["lima_verificado"],"status":"consultar","qpv":100,"qpvBase":100,"bonuses":["color_prioritario","tamano_ideal"],"penalties":["sin_wa"]},{"id":3,"title":"Machito Poodle Apricot Enano","subtitle":"Grupo Poodle Lima Peru","type":"adopcion","price":0,"color":"apricot","size":"enano","location":"Lima","contact":"Facebook Poodle Lima Peru","wa":"","url":"https://www.facebook.com/groups/862034868948734/","notes":"Machito apricot enano disponible. Publicacion en grupo oficial.","badges":["lima_verificado"],"status":"consultar","qpv":100,"qpvBase":100,"bonuses":["color_prioritario","tamano_ideal"],"penalties":["sin_wa"]},{"id":4,"title":"Caniche Minitoy en Adopcion - Caso Especial","subtitle":"Rescate con compromiso","type":"adopcion","price":0,"color":"marron","size":"miniatura","location":"Lima","contact":"Instagram DM","wa":"","url":"https://www.instagram.com/p/DUjSSXojOtq/","notes":"Caniche mini de 2,5 kg. Adopcion con formulario y compromiso responsable.","badges":["caso_especial"],"status":"consultar","qpv":100,"qpvBase":100,"bonuses":["color_prioritario","tamano_ideal"],"penalties":["sin_wa"]},{"id":12,"title":"Cachorros Apricot SJM - Padres Presentes","subtitle":"Criador particular · San Juan Miraflores","type":"venta","price":2800,"color":"apricot","size":"enano","location":"SJM, Lima","contact":"WhatsApp 930 404 894","wa":"51930404894","url":"https://www.facebook.com/groups/1546254429514430/","notes":"1 mes 10 dias, ya vacunados. Padres presentes para verificar tamano adulto.","badges":["vacunas","padres_presentes"],"status":"disponible","qpv":100,"qpvBase":85,"bonuses":["color_prioritario","tamano_ideal","vacunas"],"penalties":[]},{"id":13,"title":"Poodle Mini Cachorro - SJL","subtitle":"Particular · San Juan de Lurigancho","type":"venta","price":2500,"color":"marron","size":"miniatura","location":"SJL, Lima","contact":"WhatsApp 991 296 543","wa":"51991296543","url":"https://www.facebook.com/groups/1546254429514430/","notes":"Criador particular en SJL. Consultar vacunas, desparasitacion y tamano adulto.","badges":["lima_verificado"],"status":"disponible","qpv":100,"qpvBase":90,"bonuses":["color_prioritario","tamano_ideal"],"penalties":[]},{"id":14,"title":"Poodle Miniatura Apricot - Lima Onepets","subtitle":"Lima Onepets · San Martin de Porres","type":"venta","price":2800,"color":"apricot","size":"miniatura","location":"San Martin de Porres, Lima","contact":"WhatsApp 989 886 841","wa":"51989886841","url":"https://limaonepets.com","notes":"Criador con videollamada previa. Apricot miniatura. Verificar disponibilidad.","badges":["criadero_oficial","vacunas","criadero_verificado"],"status":"consultar","qpv":100,"qpvBase":85,"bonuses":["color_prioritario","tamano_ideal","criador_verificado","vacunas"],"penalties":["enlace_generico"]},{"id":10,"title":"Poodle Enano Marron Chocolate - Puppy Toy Peru","subtitle":"Puppy Toy Peru · Los Olivos","type":"venta","price":4000,"color":"marron","size":"enano","location":"Los Olivos, Lima","contact":"WhatsApp 920 688 338","wa":"51920688338","url":"https://puppytoyperu.com/tienda/","notes":"Color marron chocolate exclusivo. Pedigree completo, padres campeones. Garantia de salud incluida. Precio confirmado S/4,000.","badges":["criadero_certificado","pedigree","vacunas","garantia","criadero_verificado"],"status":"disponible","qpv":90,"qpvBase":70,"bonuses":["color_prioritario","tamano_ideal","criador_verificado","vacunas","pedigree","garantia_salud"],"penalties":["precio_alto_sin_pedigree"]},{"id":9,"title":"Poodle Apricot - Happy Pets","subtitle":"Happy Pets Oficial · Lima","type":"venta","price":3500,"color":"apricot","size":"miniatura","location":"Lima","contact":"HappyPetsOficial.com","wa":"","url":"https://happypets.pe/product/poodle-apricot/","notes":"Rojo pimenton caracteristico, favorito de familias. Pedigree y vacunas incluidas.","badges":["criadero_oficial","pedigree","vacunas"],"status":"consultar","qpv":85,"qpvBase":75,"bonuses":["color_prioritario","tamano_ideal","vacunas","pedigree"],"penalties":["sin_wa"]},{"id":8,"title":"Poodle Apricot Rojo - Lima Pets","subtitle":"Lima Pets Peru · Cieneguilla","type":"venta","price":3500,"color":"rojo","size":"enano","location":"Cieneguilla, Lima","contact":"Web LimaPetsPeru.com","wa":"","url":"https://limapetsperu.com/producto/poodle-apricot-rojo/","notes":"Elegantes y juguetones. Criadero en Cieneguilla. Consultar disponibilidad antes de visitar.","badges":["criadero_oficial","vacunas"],"status":"consultar","qpv":70,"qpvBase":75,"bonuses":["color_prioritario","tamano_ideal","vacunas"],"penalties":["sin_wa","enlace_generico"]},{"id":11,"title":"Poodle Toy Rojo - Happy Pets","subtitle":"Happy Pets Oficial","type":"venta","price":4000,"color":"rojo","size":"miniatura","location":"Lima","contact":"HappyPetsOficial.com","wa":"","url":"https://happypetsoficial.com/producto/poodle-toy-rojo/","notes":"Al limite del presupuesto. Verificar tamano enano/miniatura (no toy puro). Pedigree incluido.","badges":["pedigree","vacunas"],"status":"consultar","qpv":65,"qpvBase":70,"bonuses":["color_prioritario","tamano_ideal","vacunas","pedigree"],"penalties":["sin_wa","precio_alto_sin_pedigree"]}];
+const poodlesData = [{"id":5,"title":"Animales en Adopcion Lima - Poodle Apricot","subtitle":"Refugio oficial Lima","type":"adopcion","price":0,"color":"apricot","size":"enano","location":"Lima","contact":"WhatsApp 947 129 125","wa":"51947129125","url":"https://www.instagram.com/animalesenadopcionlima/","notes":"Entregan desparasitado, vacunado, esterilizado y con Simparica + saco de comida.","badges":["vacunas","esterilizado","refugio_oficial"],"status":"disponible","qpv":115,"qpvBase":100,"bonuses":["color_prioritario","tamano_ideal","vacunas"],"penalties":[],"contactStatus":"pendiente"},{"id":7,"title":"Poodle Enano Apricot - Puppy Toy Peru","subtitle":"Puppy Toy Peru · Los Olivos","type":"venta","price":3500,"color":"apricot","size":"enano","location":"Los Olivos, Lima","contact":"WhatsApp 920 688 338","wa":"51920688338","url":"https://puppytoyperu.com/tienda/","notes":"Criador con +10 anos experiencia. Pedigree, vacunas, garantia de salud. Envio a todo Peru.","badges":["criadero_certificado","pedigree","vacunas","garantia","criadero_verificado"],"status":"disponible","qpv":110,"qpvBase":75,"bonuses":["color_prioritario","tamano_ideal","criador_verificado","vacunas","pedigree","garantia_salud"],"penalties":[],"contactStatus":"pendiente"},{"id":6,"title":"Poodle Toy - Premium Kennel (desde S/2,500)","subtitle":"Premium Kennel · Miraflores","type":"venta","price":2500,"color":"apricot","size":"miniatura","location":"Miraflores, Lima","contact":"WhatsApp 934 737 929","wa":"51934737929","url":"https://cachorrosperu.pe/categoria/raza-miniatura/","notes":"Precio base S/2,500. Colores chocolate (S/4,800) y rojo (S/5,500) EXCEDEN presupuesto. Preguntar por apricot o marron en precio base.","badges":["criadero_oficial","pedigree","vacunas","criadero_verificado"],"status":"consultar","qpv":105,"qpvBase":90,"bonuses":["color_prioritario","tamano_ideal","criador_verificado","vacunas","pedigree"],"penalties":["precio_alto_sin_pedigree"],"contactStatus":"pendiente"},{"id":1,"title":"Poodle Enano Macho - Ultimo Bebe","subtitle":"Familia Huellitas · Lima","type":"adopcion","price":0,"color":"apricot","size":"enano","location":"Lima","contact":"TikTok @familia.huellitas17","wa":"","url":"https://www.tiktok.com/@familia.huellitas17/video/7648863250624285960","notes":"Publicado 7 junio 2026. Machito enano, ultimo bebe disponible. Contactar por DM.","badges":["publicado_reciente","lima_verificado"],"status":"consultar","qpv":100,"qpvBase":100,"bonuses":["color_prioritario","tamano_ideal"],"penalties":["sin_wa"],"contactStatus":"pendiente"},{"id":2,"title":"Mini Caniches en Adopcion Gratuita","subtitle":"Rescate Lima · Animales Surco","type":"adopcion","price":0,"color":"marron","size":"enano","location":"Surco, Lima","contact":"TikTok @animalsurco24oficial","wa":"","url":"https://www.tiktok.com/@animalsurco24oficial/video/7479197864405568773","notes":"Cachorros pequenos en adopcion gratuita Lima. Contactar directamente por la cuenta.","badges":["lima_verificado"],"status":"consultar","qpv":100,"qpvBase":100,"bonuses":["color_prioritario","tamano_ideal"],"penalties":["sin_wa"],"contactStatus":"pendiente"},{"id":3,"title":"Machito Poodle Apricot Enano","subtitle":"Grupo Poodle Lima Peru","type":"adopcion","price":0,"color":"apricot","size":"enano","location":"Lima","contact":"Facebook Poodle Lima Peru","wa":"","url":"https://www.facebook.com/groups/862034868948734/","notes":"Machito apricot enano disponible. Publicacion en grupo oficial.","badges":["lima_verificado"],"status":"consultar","qpv":100,"qpvBase":100,"bonuses":["color_prioritario","tamano_ideal"],"penalties":["sin_wa"],"contactStatus":"pendiente"},{"id":4,"title":"Caniche Minitoy en Adopcion - Caso Especial","subtitle":"Rescate con compromiso","type":"adopcion","price":0,"color":"marron","size":"miniatura","location":"Lima","contact":"Instagram DM","wa":"","url":"https://www.instagram.com/p/DUjSSXojOtq/","notes":"Caniche mini de 2,5 kg. Adopcion con formulario y compromiso responsable.","badges":["caso_especial"],"status":"consultar","qpv":100,"qpvBase":100,"bonuses":["color_prioritario","tamano_ideal"],"penalties":["sin_wa"],"contactStatus":"pendiente"},{"id":12,"title":"Cachorros Apricot SJM - Padres Presentes","subtitle":"Criador particular · San Juan Miraflores","type":"venta","price":2800,"color":"apricot","size":"enano","location":"SJM, Lima","contact":"WhatsApp 930 404 894","wa":"51930404894","url":"https://www.facebook.com/groups/1546254429514430/","notes":"1 mes 10 dias, ya vacunados. Padres presentes para verificar tamano adulto.","badges":["vacunas","padres_presentes"],"status":"disponible","qpv":100,"qpvBase":85,"bonuses":["color_prioritario","tamano_ideal","vacunas"],"penalties":[],"contactStatus":"pendiente"},{"id":13,"title":"Poodle Mini Cachorro - SJL","subtitle":"Particular · San Juan de Lurigancho","type":"venta","price":2500,"color":"marron","size":"miniatura","location":"SJL, Lima","contact":"WhatsApp 991 296 543","wa":"51991296543","url":"https://www.facebook.com/groups/1546254429514430/","notes":"Criador particular en SJL. Consultar vacunas, desparasitacion y tamano adulto.","badges":["lima_verificado"],"status":"disponible","qpv":100,"qpvBase":90,"bonuses":["color_prioritario","tamano_ideal"],"penalties":[],"contactStatus":"pendiente"},{"id":14,"title":"Poodle Miniatura Apricot - Lima Onepets","subtitle":"Lima Onepets · San Martin de Porres","type":"venta","price":2800,"color":"apricot","size":"miniatura","location":"San Martin de Porres, Lima","contact":"WhatsApp 989 886 841","wa":"51989886841","url":"https://limaonepets.com","notes":"Criador con videollamada previa. Apricot miniatura. Verificar disponibilidad.","badges":["criadero_oficial","vacunas","criadero_verificado"],"status":"consultar","qpv":100,"qpvBase":85,"bonuses":["color_prioritario","tamano_ideal","criador_verificado","vacunas"],"penalties":["enlace_generico"],"contactStatus":"pendiente"},{"id":10,"title":"Poodle Enano Marron Chocolate - Puppy Toy Peru","subtitle":"Puppy Toy Peru · Los Olivos","type":"venta","price":4000,"color":"marron","size":"enano","location":"Los Olivos, Lima","contact":"WhatsApp 920 688 338","wa":"51920688338","url":"https://puppytoyperu.com/tienda/","notes":"Color marron chocolate exclusivo. Pedigree completo, padres campeones. Garantia de salud incluida. Precio confirmado S/4,000.","badges":["criadero_certificado","pedigree","vacunas","garantia","criadero_verificado"],"status":"disponible","qpv":90,"qpvBase":70,"bonuses":["color_prioritario","tamano_ideal","criador_verificado","vacunas","pedigree","garantia_salud"],"penalties":["precio_alto_sin_pedigree"],"contactStatus":"pendiente"},{"id":9,"title":"Poodle Apricot - Happy Pets","subtitle":"Happy Pets Oficial · Lima","type":"venta","price":3500,"color":"apricot","size":"miniatura","location":"Lima","contact":"HappyPetsOficial.com","wa":"","url":"https://happypets.pe/product/poodle-apricot/","notes":"Rojo pimenton caracteristico, favorito de familias. Pedigree y vacunas incluidas.","badges":["criadero_oficial","pedigree","vacunas"],"status":"consultar","qpv":85,"qpvBase":75,"bonuses":["color_prioritario","tamano_ideal","vacunas","pedigree"],"penalties":["sin_wa"],"contactStatus":"pendiente"},{"id":8,"title":"Poodle Apricot Rojo - Lima Pets","subtitle":"Lima Pets Peru · Cieneguilla","type":"venta","price":3500,"color":"rojo","size":"enano","location":"Cieneguilla, Lima","contact":"Web LimaPetsPeru.com","wa":"","url":"https://limapetsperu.com/producto/poodle-apricot-rojo/","notes":"Elegantes y juguetones. Criadero en Cieneguilla. Consultar disponibilidad antes de visitar.","badges":["criadero_oficial","vacunas"],"status":"consultar","qpv":70,"qpvBase":75,"bonuses":["color_prioritario","tamano_ideal","vacunas"],"penalties":["sin_wa","enlace_generico"],"contactStatus":"pendiente"},{"id":11,"title":"Poodle Toy Rojo - Happy Pets","subtitle":"Happy Pets Oficial","type":"venta","price":4000,"color":"rojo","size":"miniatura","location":"Lima","contact":"HappyPetsOficial.com","wa":"","url":"https://happypetsoficial.com/producto/poodle-toy-rojo/","notes":"Al limite del presupuesto. Verificar tamano enano/miniatura (no toy puro). Pedigree incluido.","badges":["pedigree","vacunas"],"status":"consultar","qpv":65,"qpvBase":70,"bonuses":["color_prioritario","tamano_ideal","vacunas","pedigree"],"penalties":["sin_wa","precio_alto_sin_pedigree"],"contactStatus":"pendiente"}];
+
+const CS_LABELS = { pendiente: 'Pendiente', contactado: 'Contactado', respondio: 'Respondio', negociando: 'Negociando', no_disponible: 'No disponible' };
+const CS_KEYS = Object.keys(CS_LABELS);
+
+let contactStatuses = {};
+function loadContactStatuses() {
+  try { const s = localStorage.getItem('poodleCS'); if (s) contactStatuses = JSON.parse(s); } catch(e) {}
+  poodlesData.forEach(p => { if (contactStatuses[p.id]) p.contactStatus = contactStatuses[p.id]; else { p.contactStatus = 'pendiente'; contactStatuses[p.id] = 'pendiente'; } });
+}
+function saveContactStatuses() {
+  try { localStorage.setItem('poodleCS', JSON.stringify(contactStatuses)); } catch(e) {}
+}
+loadContactStatuses();
 
 let currentSort = 'qpv';
 let currentFiltro = 'todos';
+let currentCFiltro = 'todos';
 let searchTerm = '';
 
 const BONUSES = {"color_prioritario":5,"tamano_ideal":5,"criador_verificado":10,"vacunas":5,"pedigree":5,"garantia_salud":5,"esterilizado":3};
@@ -729,6 +766,9 @@ function render() {
     if (['marron','apricot','rojo'].includes(currentFiltro)) return p.color === currentFiltro;
     if (['enano','miniatura'].includes(currentFiltro)) return p.size === currentFiltro;
     return true;
+  }).filter(p => {
+    if (currentCFiltro === 'todos') return true;
+    return p.contactStatus === currentCFiltro;
   });
   if (searchTerm) {
     const t = searchTerm.toLowerCase();
@@ -763,12 +803,34 @@ function render() {
     const qpvPenalties = (p.penalties||[]).map(pn => PENALTIES[pn] ? '<div class="tt-line"><span class="tt-negativo">'+PENALTIES[pn]+'</span><span>'+pn.replace(/_/g,' ')+'</span></div>' : '').join('');
     const msgWA = p.wa ? 'https://wa.me/'+p.wa+'?text='+encodeURIComponent('Hola, vi tu publicacion del '+p.title+'. Me interesa.') : '';
     const contactoHTML = p.wa ? '<a href="'+msgWA+'" target="_blank" class="btn-contacto">WhatsApp</a>' : '<a href="'+p.url+'" target="_blank" class="btn-contacto">Contactar</a>';
-    return '<div class="poodle-card '+cardClass+'"><div class="poodle-header"><div class="poodle-rank '+rankClass+'">'+rank+'</div><div class="poodle-info"><div class="poodle-title">'+escHtml(p.title)+'</div><div class="poodle-subtitle">'+escHtml(p.subtitle)+'</div><div class="poodle-meta"><span class="meta-badge tipo-'+p.type+'">'+tipoLabel+'</span><span class="meta-badge color-'+p.color+'">'+colorLabel+'</span><span class="meta-badge tamano-'+p.size+'">'+tamanoLabel+'</span><span class="meta-badge">'+escHtml(p.location)+'</span><span class="'+estadoClass+'">'+estadoLabel+'</span></div></div><div class="precio-box">'+precioHTML+'<div class="qpv-area '+qpvClass+'" onclick="toggleQPV('qt-'+p.id+'')"><div class="qpv-score">QPV '+p.qpv+'</div><div class="qpv-bar"><div class="qpv-fill" style="width:'+Math.min(100,p.qpv)+'%"></div></div><div class="qpv-tooltip" id="qt-'+p.id+'"><div class="tt-line"><span>Base</span><span>'+(p.qpvBase||0)+'</span></div>'+qpvBonuses+qpvPenalties+'<div class="tt-line tt-total"><span>Total</span><span>'+p.qpv+'</span></div></div></div></div></div>'+(verifHTML?'<div class="badges-verif">'+verifHTML+'</div>':'')+(p.notes?'<div class="notas">'+escHtml(p.notes)+'</div>':'')+'<div class="poodle-footer">'+contactoHTML+'<a href="'+escHtml(p.url)+'" target="_blank" class="btn-link">Ver publicacion</a></div></div>';
+    return '<div class="poodle-card '+cardClass+'"><div class="poodle-header"><div class="poodle-rank '+rankClass+'">'+rank+'</div><div class="poodle-info"><div class="poodle-title">'+escHtml(p.title)+'</div><div class="poodle-subtitle">'+escHtml(p.subtitle)+'</div><div class="poodle-meta"><span class="meta-badge tipo-'+p.type+'">'+tipoLabel+'</span><span class="meta-badge color-'+p.color+'">'+colorLabel+'</span><span class="meta-badge tamano-'+p.size+'">'+tamanoLabel+'</span><span class="meta-badge">'+escHtml(p.location)+'</span><span class="'+estadoClass+'">'+estadoLabel+'</span></div></div><div class="precio-box">'+precioHTML+'<div class="qpv-area '+qpvClass+'" onclick="toggleQPV('qt-'+p.id+'')"><div class="qpv-score">QPV '+p.qpv+'</div><div class="qpv-bar"><div class="qpv-fill" style="width:'+Math.min(100,p.qpv)+'%"></div></div><div class="qpv-tooltip" id="qt-'+p.id+'"><div class="tt-line"><span>Base</span><span>'+(p.qpvBase||0)+'</span></div>'+qpvBonuses+qpvPenalties+'<div class="tt-line tt-total"><span>Total</span><span>'+p.qpv+'</span></div></div></div></div></div>'+(verifHTML?'<div class="badges-verif">'+verifHTML+'</div>':'')+'<div style="display:flex;align-items:center;gap:6px;margin-top:6px"><span style="font-size:.68rem;color:#6c757d">Seguimiento:</span><div class="contact-area" onclick="event.stopPropagation();toggleContactMenu('cm-'+p.id+'')"><span class="contact-badge '+p.contactStatus+'">'+(CS_LABELS[p.contactStatus]||'Pendiente')+'</span><div class="contact-menu" id="cm-'+p.id+'">'+CS_KEYS.map(function(kk){return '<div class="contact-menu-item'+(p.contactStatus===kk?' activo':'')+'" onclick="event.stopPropagation();setContact('+p.id+',''+kk+'')">'+(CS_LABELS[kk])+'</div>'}).join('')+'</div></div></div>'+(p.notes?'<div class="notas">'+escHtml(p.notes)+'</div>':'')+'<div class="poodle-footer">'+contactoHTML+'<a href="'+escHtml(p.url)+'" target="_blank" class="btn-link">Ver publicacion</a></div></div>';
   }).join('');
   updateStats(filtered);
 }
 
 function escHtml(s) { const d=document.createElement('div'); d.textContent=s||''; return d.innerHTML; }
+
+function toggleContactMenu(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const was = el.classList.contains('show');
+  document.querySelectorAll('.contact-menu.show').forEach(e => e.classList.remove('show'));
+  if (!was) el.classList.add('show');
+}
+
+function setContact(id, status) {
+  contactStatuses[id] = status;
+  const p = poodlesData.find(x => x.id === id);
+  if (p) p.contactStatus = status;
+  saveContactStatuses();
+  document.querySelectorAll('.contact-menu.show').forEach(e => e.classList.remove('show'));
+  render();
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.qpv-area')) document.querySelectorAll('.qpv-tooltip.show').forEach(el => el.classList.remove('show'));
+  if (!e.target.closest('.contact-area')) document.querySelectorAll('.contact-menu.show').forEach(el => el.classList.remove('show'));
+});
 
 function toggleQPV(id) {
   const el = document.getElementById(id);
@@ -778,7 +840,7 @@ function toggleQPV(id) {
   if(!was)el.classList.add('show');
 }
 
-document.addEventListener('click', function(e) { if(!e.target.closest('.qpv-area')) document.querySelectorAll('.qpv-tooltip.show').forEach(el=>el.classList.remove('show')); });
+
 
 function updateStats(arr) {
   document.getElementById('stat-total').textContent = arr.length;
@@ -791,11 +853,19 @@ function updateStats(arr) {
   document.getElementById('stat-qpv-avg').textContent = arr.length>0?avg:'—';
 }
 
-document.querySelectorAll('.filtro-btn').forEach(btn => {
+document.querySelectorAll('#filtros .filtro-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.filtro-btn').forEach(b=>b.classList.remove('activo'));
+    document.querySelectorAll('#filtros .filtro-btn').forEach(b=>b.classList.remove('activo'));
     btn.classList.add('activo');
     currentFiltro = btn.dataset.filtro;
+    render();
+  });
+});
+document.querySelectorAll('#filtros-contacto .filtro-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#filtros-contacto .filtro-btn').forEach(b=>b.classList.remove('activo'));
+    btn.classList.add('activo');
+    currentCFiltro = btn.dataset.cfiltro;
     render();
   });
 });

@@ -31,7 +31,8 @@
         "sin_wa"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-16",
+      "contactStatus": "pendiente"
     },
     {
       "id": 2,
@@ -60,7 +61,8 @@
         "sin_wa"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-16",
+      "contactStatus": "pendiente"
     },
     {
       "id": 3,
@@ -89,7 +91,8 @@
         "sin_wa"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-16",
+      "contactStatus": "pendiente"
     },
     {
       "id": 4,
@@ -118,7 +121,8 @@
         "sin_wa"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-16",
+      "contactStatus": "pendiente"
     },
     {
       "id": 5,
@@ -148,7 +152,8 @@
       ],
       "penalties": [],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-16",
+      "contactStatus": "pendiente"
     },
     {
       "id": 6,
@@ -183,7 +188,8 @@
         "precio_alto_sin_pedigree"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-16",
+      "contactStatus": "pendiente"
     },
     {
       "id": 7,
@@ -218,7 +224,8 @@
       ],
       "penalties": [],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-16",
+      "contactStatus": "pendiente"
     },
     {
       "id": 8,
@@ -250,7 +257,8 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-16",
+      "contactStatus": "pendiente"
     },
     {
       "id": 9,
@@ -283,7 +291,8 @@
         "sin_wa"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-16",
+      "contactStatus": "pendiente"
     },
     {
       "id": 10,
@@ -320,7 +329,8 @@
         "precio_alto_sin_pedigree"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-16",
+      "contactStatus": "pendiente"
     },
     {
       "id": 11,
@@ -353,7 +363,8 @@
         "precio_alto_sin_pedigree"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-16",
+      "contactStatus": "pendiente"
     },
     {
       "id": 12,
@@ -382,7 +393,8 @@
       ],
       "penalties": [],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-16",
+      "contactStatus": "pendiente"
     },
     {
       "id": 13,
@@ -409,7 +421,8 @@
       ],
       "penalties": [],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-16",
+      "contactStatus": "pendiente"
     },
     {
       "id": 14,
@@ -442,7 +455,8 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-13",
-      "lastChecked": "2026-06-16"
+      "lastChecked": "2026-06-16",
+      "contactStatus": "pendiente"
     }
   ]
 }
