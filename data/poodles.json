@@ -1,7 +1,7 @@
 {
   "version": 8,
-  "lastUpdated": "2026-06-27",
-  "lastScraped": "2026-06-27",
+  "lastUpdated": "2026-06-28",
+  "lastScraped": "2026-06-28",
   "poodles": [
     {
       "id": 5,
@@ -69,7 +69,7 @@
       ],
       "penalties": [],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 110,
       "rank": 2,
       "contactStatus": "pendiente"
@@ -107,7 +107,7 @@
         "precio_alto_sin_pedigree"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 105,
       "rank": 3,
       "contactStatus": "pendiente"
@@ -334,7 +334,7 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-13",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 100,
       "rank": 10,
       "contactStatus": "pendiente"
@@ -374,7 +374,7 @@
         "precio_alto_sin_pedigree"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 90,
       "rank": 11,
       "contactStatus": "pendiente"
@@ -410,7 +410,7 @@
         "sin_wa"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 85,
       "rank": 12,
       "contactStatus": "pendiente"
@@ -443,7 +443,7 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 85,
       "rank": 13,
       "contactStatus": "pendiente"
@@ -476,7 +476,7 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 85,
       "rank": 14,
       "contactStatus": "pendiente"
@@ -509,7 +509,7 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 85,
       "rank": 15,
       "contactStatus": "pendiente"
@@ -542,7 +542,7 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 85,
       "rank": 16,
       "contactStatus": "pendiente"
@@ -575,7 +575,7 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 85,
       "rank": 17,
       "contactStatus": "pendiente"
@@ -608,7 +608,7 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 85,
       "rank": 18,
       "contactStatus": "pendiente"
@@ -641,7 +641,7 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 85,
       "rank": 19,
       "contactStatus": "pendiente"
@@ -674,7 +674,7 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 85,
       "rank": 20,
       "contactStatus": "pendiente"
@@ -707,7 +707,7 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 85,
       "rank": 21,
       "contactStatus": "pendiente"
@@ -740,7 +740,7 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 85,
       "rank": 22,
       "contactStatus": "pendiente"
@@ -773,7 +773,7 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 85,
       "rank": 23,
       "contactStatus": "pendiente"
@@ -806,7 +806,7 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 85,
       "rank": 24,
       "contactStatus": "pendiente"
@@ -841,7 +841,7 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 70,
       "rank": 25,
       "contactStatus": "pendiente"
@@ -877,7 +877,7 @@
         "precio_alto_sin_pedigree"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 65,
       "rank": 26,
       "contactStatus": "pendiente"
@@ -908,7 +908,7 @@
       ],
       "penalties": [],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 20,
       "rank": 27,
       "contactStatus": "pendiente"
@@ -939,7 +939,7 @@
       ],
       "penalties": [],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-06-27",
+      "lastChecked": "2026-06-28",
       "qpv": 20,
       "rank": 28,
       "contactStatus": "pendiente"
