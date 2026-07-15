@@ -252,6 +252,11 @@
         "price": 2025,
         "date": "2026-07-14",
         "previousPrice": 2025
+      },
+      {
+        "price": 2025,
+        "date": "2026-07-15",
+        "previousPrice": 2025
       }
     ],
     "10": [
@@ -383,6 +388,11 @@
       {
         "price": 2025,
         "date": "2026-07-14",
+        "previousPrice": 2025
+      },
+      {
+        "price": 2025,
+        "date": "2026-07-15",
         "previousPrice": 2025
       }
     ],
@@ -544,6 +554,11 @@
       {
         "price": 2026,
         "date": "2026-07-14",
+        "previousPrice": 2025
+      },
+      {
+        "price": 2026,
+        "date": "2026-07-15",
         "previousPrice": 2025
       }
     ]
