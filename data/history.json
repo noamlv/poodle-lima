@@ -571,6 +571,11 @@
         "price": 1,
         "date": "2026-07-25",
         "previousPrice": 1
+      },
+      {
+        "price": 1,
+        "date": "2026-07-26",
+        "previousPrice": 1
       }
     ],
     "13": [
@@ -602,6 +607,11 @@
       {
         "price": 1,
         "date": "2026-07-25",
+        "previousPrice": 1
+      },
+      {
+        "price": 1,
+        "date": "2026-07-26",
         "previousPrice": 1
       }
     ],
