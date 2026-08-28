@@ -195,6 +195,11 @@
         "price": 2024,
         "date": "2026-08-27",
         "previousPrice": 2024
+      },
+      {
+        "price": 2024,
+        "date": "2026-08-28",
+        "previousPrice": 2024
       }
     ],
     "7": [
@@ -526,6 +531,11 @@
       {
         "price": 2025,
         "date": "2026-08-27",
+        "previousPrice": 2025
+      },
+      {
+        "price": 2025,
+        "date": "2026-08-28",
         "previousPrice": 2025
       }
     ],
@@ -859,6 +869,11 @@
         "price": 2025,
         "date": "2026-08-27",
         "previousPrice": 2025
+      },
+      {
+        "price": 2025,
+        "date": "2026-08-28",
+        "previousPrice": 2025
       }
     ],
     "12": [
@@ -931,6 +946,11 @@
         "price": 5,
         "date": "2026-08-23",
         "previousPrice": 1
+      },
+      {
+        "price": 3,
+        "date": "2026-08-28",
+        "previousPrice": 1
       }
     ],
     "13": [
@@ -992,6 +1012,11 @@
       {
         "price": 5,
         "date": "2026-08-23",
+        "previousPrice": 1
+      },
+      {
+        "price": 3,
+        "date": "2026-08-28",
         "previousPrice": 1
       }
     ],
@@ -1249,6 +1274,11 @@
       {
         "price": 2026,
         "date": "2026-08-26",
+        "previousPrice": 2025
+      },
+      {
+        "price": 2026,
+        "date": "2026-08-28",
         "previousPrice": 2025
       }
     ]
