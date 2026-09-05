@@ -1,7 +1,7 @@
 {
   "version": 8,
-  "lastUpdated": "2026-09-04",
-  "lastScraped": "2026-09-04",
+  "lastUpdated": "2026-09-05",
+  "lastScraped": "2026-09-05",
   "poodles": [
     {
       "id": 5,
@@ -69,7 +69,7 @@
       ],
       "penalties": [],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 110,
       "rank": 2,
       "contactStatus": "pendiente"
@@ -107,7 +107,7 @@
         "precio_alto_sin_pedigree"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 105,
       "rank": 3,
       "contactStatus": "pendiente"
@@ -308,7 +308,7 @@
       "title": "Poodle Miniatura Apricot - Lima Onepets",
       "subtitle": "Lima Onepets · San Martin de Porres",
       "type": "venta",
-      "price": 2025,
+      "price": 150,
       "color": "apricot",
       "size": "miniatura",
       "location": "San Martin de Porres, Lima",
@@ -334,10 +334,106 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-13",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 100,
       "rank": 10,
       "contactStatus": "pendiente"
+    },
+    {
+      "id": 120,
+      "title": "Pinscher Mini",
+      "subtitle": "Disponible en Lima Onepets",
+      "type": "venta",
+      "price": 2800,
+      "color": "apricot",
+      "size": "miniatura",
+      "location": "Lima",
+      "contact": "lima_onepets",
+      "wa": "",
+      "url": "https://limaonepets.com/cachorros/pinscher-mini/",
+      "source": "lima_onepets",
+      "notes": "Disponible en Lima Onepets",
+      "badges": [
+        "lima_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 85,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado"
+      ],
+      "penalties": [
+        "enlace_generico"
+      ],
+      "addedAt": "2026-09-05",
+      "lastChecked": "2026-09-05",
+      "qpv": 95,
+      "rank": 11
+    },
+    {
+      "id": 122,
+      "title": "Schnauzer Mini",
+      "subtitle": "Disponible en Lima Onepets",
+      "type": "venta",
+      "price": 2800,
+      "color": "apricot",
+      "size": "miniatura",
+      "location": "Lima",
+      "contact": "lima_onepets",
+      "wa": "",
+      "url": "https://limaonepets.com/cachorros/schnauzer-mini/",
+      "source": "lima_onepets",
+      "notes": "Disponible en Lima Onepets",
+      "badges": [
+        "lima_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 85,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado"
+      ],
+      "penalties": [
+        "enlace_generico"
+      ],
+      "addedAt": "2026-09-05",
+      "lastChecked": "2026-09-05",
+      "qpv": 95,
+      "rank": 12
+    },
+    {
+      "id": 125,
+      "title": "Yorkshire Terrier Mini",
+      "subtitle": "Disponible en Lima Onepets",
+      "type": "venta",
+      "price": 2800,
+      "color": "apricot",
+      "size": "miniatura",
+      "location": "Lima",
+      "contact": "lima_onepets",
+      "wa": "",
+      "url": "https://limaonepets.com/cachorros/yorkshire-terrier-mini/",
+      "source": "lima_onepets",
+      "notes": "Disponible en Lima Onepets",
+      "badges": [
+        "lima_verificado"
+      ],
+      "status": "consultar",
+      "qpvBase": 85,
+      "bonuses": [
+        "color_prioritario",
+        "tamano_ideal",
+        "criador_verificado"
+      ],
+      "penalties": [
+        "enlace_generico"
+      ],
+      "addedAt": "2026-09-05",
+      "lastChecked": "2026-09-05",
+      "qpv": 95,
+      "rank": 13
     },
     {
       "id": 10,
@@ -374,9 +470,9 @@
         "precio_alto_sin_pedigree"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 90,
-      "rank": 11,
+      "rank": 14,
       "contactStatus": "pendiente"
     },
     {
@@ -410,9 +506,9 @@
         "sin_wa"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 85,
-      "rank": 12,
+      "rank": 15,
       "contactStatus": "pendiente"
     },
     {
@@ -443,9 +539,9 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 85,
-      "rank": 13,
+      "rank": 16,
       "contactStatus": "pendiente"
     },
     {
@@ -476,9 +572,9 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 85,
-      "rank": 14,
+      "rank": 17,
       "contactStatus": "pendiente"
     },
     {
@@ -509,9 +605,9 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 85,
-      "rank": 15,
+      "rank": 18,
       "contactStatus": "pendiente"
     },
     {
@@ -542,9 +638,9 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 85,
-      "rank": 16,
+      "rank": 19,
       "contactStatus": "pendiente"
     },
     {
@@ -575,9 +671,9 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 85,
-      "rank": 17,
+      "rank": 20,
       "contactStatus": "pendiente"
     },
     {
@@ -608,9 +704,9 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 85,
-      "rank": 18,
+      "rank": 21,
       "contactStatus": "pendiente"
     },
     {
@@ -641,9 +737,9 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 85,
-      "rank": 19,
+      "rank": 22,
       "contactStatus": "pendiente"
     },
     {
@@ -674,9 +770,9 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 85,
-      "rank": 20,
+      "rank": 23,
       "contactStatus": "pendiente"
     },
     {
@@ -707,9 +803,9 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 85,
-      "rank": 21,
+      "rank": 24,
       "contactStatus": "pendiente"
     },
     {
@@ -740,9 +836,9 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 85,
-      "rank": 22,
+      "rank": 25,
       "contactStatus": "pendiente"
     },
     {
@@ -773,9 +869,9 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 85,
-      "rank": 23,
+      "rank": 26,
       "contactStatus": "pendiente"
     },
     {
@@ -806,9 +902,9 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 85,
-      "rank": 24,
+      "rank": 27,
       "contactStatus": "pendiente"
     },
     {
@@ -841,9 +937,9 @@
         "enlace_generico"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 70,
-      "rank": 25,
+      "rank": 28,
       "contactStatus": "pendiente"
     },
     {
@@ -877,9 +973,9 @@
         "precio_alto_sin_pedigree"
       ],
       "addedAt": "2026-06-10",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 65,
-      "rank": 26,
+      "rank": 29,
       "contactStatus": "pendiente"
     },
     {
@@ -908,9 +1004,9 @@
       ],
       "penalties": [],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 20,
-      "rank": 27,
+      "rank": 30,
       "contactStatus": "pendiente"
     },
     {
@@ -939,9 +1035,9 @@
       ],
       "penalties": [],
       "addedAt": "2026-06-17",
-      "lastChecked": "2026-09-04",
+      "lastChecked": "2026-09-05",
       "qpv": 20,
-      "rank": 28,
+      "rank": 31,
       "contactStatus": "pendiente"
     }
   ]
