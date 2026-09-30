@@ -350,6 +350,11 @@
         "price": 2024,
         "date": "2026-09-29",
         "previousPrice": 2024
+      },
+      {
+        "price": 2024,
+        "date": "2026-09-30",
+        "previousPrice": 2024
       }
     ],
     "7": [
@@ -1879,6 +1884,11 @@
       {
         "price": 150,
         "date": "2026-09-29",
+        "previousPrice": 150
+      },
+      {
+        "price": 150,
+        "date": "2026-09-30",
         "previousPrice": 150
       }
     ]
