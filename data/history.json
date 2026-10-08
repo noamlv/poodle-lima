@@ -2030,6 +2030,11 @@
         "price": 150,
         "date": "2026-10-07",
         "previousPrice": 150
+      },
+      {
+        "price": 150,
+        "date": "2026-10-08",
+        "previousPrice": 150
       }
     ]
   },
