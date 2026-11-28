@@ -30,6 +30,8 @@ function generate() {
 
     const precioHTML = p.price === 0
       ? '<span class="precio-valor precio-gratis">GRATIS</span>'
+      : (p.price == null || isNaN(p.price))
+      ? '<span class="precio-valor precio-consultar">Consultar</span>'
       : `<span class="precio-valor">S/ ${p.price.toLocaleString()}</span>`;
 
     const colorLabel = { marron: 'Marron', apricot: 'Apricot', rojo: 'Rojo' }[p.color] || p.color;
@@ -183,6 +185,7 @@ header p{color:#6c757d;font-size:.9rem}
 .precio-box{text-align:right;flex-shrink:0;min-width:80px}
 .precio-valor{font-size:1.1rem;font-weight:700;color:#212529;display:block}
 .precio-gratis{color:#2e7d32;font-size:1.2rem}
+.precio-consultar{color:#a9825a;font-size:0.95rem;font-weight:600;font-style:italic}
 .qpv-area{cursor:pointer;position:relative}
 .qpv-score{font-size:.7rem;color:#6c757d;margin-top:1px}
 .qpv-bar{height:5px;background:#e9ecef;border-radius:3px;margin-top:3px;overflow:hidden;width:70px;margin-left:auto}
@@ -420,7 +423,7 @@ function render() {
     const rankClass = rank===1?'top1':rank===2?'top2':rank===3?'top3':'';
     const cardClass = rank<=3?'top3 '+rankClass:'';
     const qpvClass = getQPVClass(p.qpv);
-    const precioHTML = p.price===0?'<span class="precio-valor precio-gratis">GRATIS</span>':'<span class="precio-valor">S/ '+p.price.toLocaleString()+'</span>';
+    const precioHTML = p.price===0?'<span class="precio-valor precio-gratis">GRATIS</span>':(p.price==null||isNaN(p.price)?'<span class="precio-valor precio-consultar">Consultar</span>':'<span class="precio-valor">S/ '+p.price.toLocaleString()+'</span>');
     const colorLabel = {marron:'Marron',apricot:'Apricot',rojo:'Rojo'}[p.color]||p.color;
     const tamanoLabel = {enano:'Enano 28-35cm',miniatura:'Miniatura 35-45cm'}[p.size]||p.size;
     const tipoLabel = p.type==='adopcion'?'Adopcion':'Venta';
@@ -433,7 +436,7 @@ function render() {
     const qpvPenalties = (p.penalties||[]).map(pn => PENALTIES[pn] ? '<div class="tt-line"><span class="tt-negativo">'+PENALTIES[pn]+'</span><span>'+pn.replace(/_/g,' ')+'</span></div>' : '').join('');
     const msgWA = p.wa ? 'https://wa.me/'+p.wa+'?text='+encodeURIComponent('Hola, vi tu publicacion del '+p.title+'. Me interesa.') : '';
     const contactoHTML = p.wa ? '<a href="'+msgWA+'" target="_blank" class="btn-contacto">WhatsApp</a>' : '<a href="'+p.url+'" target="_blank" class="btn-contacto">Contactar</a>';
-    return '<div class="poodle-card '+cardClass+'"><div class="poodle-header"><div class="poodle-rank '+rankClass+'">'+rank+'</div><div class="poodle-info"><div class="poodle-title">'+escHtml(p.title)+'</div><div class="poodle-subtitle">'+escHtml(p.subtitle)+'</div><div class="poodle-meta"><span class="meta-badge tipo-'+p.type+'">'+tipoLabel+'</span><span class="meta-badge color-'+p.color+'">'+colorLabel+'</span><span class="meta-badge tamano-'+p.size+'">'+tamanoLabel+'</span><span class="meta-badge">'+escHtml(p.location)+'</span><span class="'+estadoClass+'">'+estadoLabel+'</span></div></div><div class="precio-box">'+precioHTML+'<div class="qpv-area '+qpvClass+'" onclick="toggleQPV(\'qt-'+p.id+'\')"><div class="qpv-score">QPV '+p.qpv+'</div><div class="qpv-bar"><div class="qpv-fill" style="width:'+Math.min(100,p.qpv)+'%"></div></div><div class="qpv-tooltip" id="qt-'+p.id+'"><div class="tt-line"><span>Base</span><span>'+(p.qpvBase||0)+'</span></div>'+qpvBonuses+qpvPenalties+'<div class="tt-line tt-total"><span>Total</span><span>'+p.qpv+'</span></div></div></div></div></div>'+(verifHTML?'<div class="badges-verif">'+verifHTML+'</div>':'')+'<div style="display:flex;align-items:center;gap:6px;margin-top:6px"><span style="font-size:.68rem;color:#6c757d">Seguimiento:</span><div class="contact-area" onclick="event.stopPropagation();toggleContactMenu(\'cm-'+p.id+'\')"><span class="contact-badge '+p.contactStatus+'">'+(CS_LABELS[p.contactStatus]||'Pendiente')+'</span><div class="contact-menu" id="cm-'+p.id+'">'+CS_KEYS.map(function(kk){return '<div class="contact-menu-item'+(p.contactStatus===kk?' activo':'')+'" onclick="event.stopPropagation();setContact('+p.id+',\''+kk+'\')">'+(CS_LABELS[kk])+'</div>'}).join('')+'</div></div></div>'+(p.notes?'<div class="notas">'+escHtml(p.notes)+'</div>':'')+'<div class="poodle-footer">'+contactoHTML+'<a href="'+escHtml(p.url)+'" target="_blank" class="btn-link">Ver publicacion</a></div></div>';
+    return '<div class="poodle-card '+cardClass+'"><div class="poodle-header"><div class="poodle-rank '+rankClass+'">'+rank+'</div><div class="poodle-info"><div class="poodle-title">'+escHtml(p.title)+'</div><div class="poodle-subtitle">'+escHtml(p.subtitle)+'</div><div class="poodle-meta"><span class="meta-badge tipo-'+p.type+'">'+tipoLabel+'</span><span class="meta-badge color-'+p.color+'">'+colorLabel+'</span><span class="meta-badge tamano-'+p.size+'">'+tamanoLabel+'</span><span class="meta-badge">'+escHtml(p.location)+'</span><span class="'+estadoClass+'">'+estadoLabel+'</span></div></div><div class="precio-box">'+precioHTML+'<div class="qpv-area '+qpvClass+'" onclick="toggleQPV(&#39;qt-'+p.id+'&#39;)"><div class="qpv-score">QPV '+p.qpv+'</div><div class="qpv-bar"><div class="qpv-fill" style="width:'+Math.min(100,p.qpv)+'%"></div></div><div class="qpv-tooltip" id="qt-'+p.id+'"><div class="tt-line"><span>Base</span><span>'+(p.qpvBase||0)+'</span></div>'+qpvBonuses+qpvPenalties+'<div class="tt-line tt-total"><span>Total</span><span>'+p.qpv+'</span></div></div></div></div></div>'+(verifHTML?'<div class="badges-verif">'+verifHTML+'</div>':'')+'<div style="display:flex;align-items:center;gap:6px;margin-top:6px"><span style="font-size:.68rem;color:#6c757d">Seguimiento:</span><div class="contact-area" onclick="event.stopPropagation();toggleContactMenu(&#39;cm-'+p.id+'&#39;)"><span class="contact-badge '+p.contactStatus+'">'+(CS_LABELS[p.contactStatus]||'Pendiente')+'</span><div class="contact-menu" id="cm-'+p.id+'">'+CS_KEYS.map(function(kk){return '<div class="contact-menu-item'+(p.contactStatus===kk?' activo':'')+'" onclick="event.stopPropagation();setContact('+p.id+',&#39;'+kk+'&#39;)">'+(CS_LABELS[kk])+'</div>'}).join('')+'</div></div></div>'+(p.notes?'<div class="notas">'+escHtml(p.notes)+'</div>':'')+'<div class="poodle-footer">'+contactoHTML+'<a href="'+escHtml(p.url)+'" target="_blank" class="btn-link">Ver publicacion</a></div></div>';
   }).join('');
   updateStats(filtered);
 }

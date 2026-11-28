@@ -1,6 +1,7 @@
 const fetch = require('node-fetch');
 const cheerio = require('cheerio');
 const { loadPoodles, savePoodles, loadHistory, saveHistory, isValidLimaLocation, getQPVBase } = require('./utils');
+const { run: sanitize } = require('./sanitize');
 
 const COLOR_KEYWORDS = { marron: ['marron', 'chocolate', 'brown', 'cafe'], apricot: ['apricot', 'albaricoque', 'damasco'], rojo: ['rojo', 'red', 'pimenton', 'vino'] };
 const COLOR_PRIORITY = { marron: ['marron', 'chocolate'], apricot: ['apricot', 'damasco'], rojo: ['rojo', 'pimenton'] };
@@ -13,6 +14,14 @@ function detectColor(text) {
   return null;
 }
 
+// Colames que NO cumplen el criterio del usuario (solo marron/apricot/rojo).
+// Si un titulo menciona alguno, se descarta el listing (antes se colaban como apricot).
+const EXCLUDED_COLOR_KEYWORDS = ['blanco', 'white', 'negro', 'black', 'beige', 'crema', 'cream', 'plateado', 'plata', 'silver', 'gris', 'gray', 'grey', 'merle', 'exotico', 'exótico', 'multicolor', 'particolor', 'tricolor'];
+function hasExcludedColor(text) {
+  const t = text.toLowerCase();
+  return EXCLUDED_COLOR_KEYWORDS.some(k => t.includes(k));
+}
+
 function detectSize(text) {
   const t = text.toLowerCase();
   if (t.includes('toy') || t.includes('minitoy')) return 'miniatura';
@@ -21,9 +30,15 @@ function detectSize(text) {
 }
 
 function detectPrice(text) {
-  const matches = text.match(/s\/[.\s]*(\d[\d,.\s]*)/i);
-  if (matches) return parseInt(matches[1].replace(/[.,\s]/g, ''));
-  return null;
+  if (!text) return null;
+  // Formato peruano: "S/3,500.00" o "S/ 2,500" (miles con coma, decimales con punto).
+  // El numero DEBE ir justo despues de "S/" (solo espacios separadores) para no atrapar anios u otros numeros.
+  const m = text.match(/s\/\s*(\d[\d,]*(?:\.\d{1,2})?)/i);
+  if (!m) return null;
+  const num = m[1].replace(/\.\d{1,2}$/, '').replace(/,/g, '');
+  const p = parseInt(num, 10);
+  if (isNaN(p) || p <= 0 || p > 60000) return null; // rango realista en soles
+  return p;
 }
 
 async function scrapeWUF() {
@@ -158,17 +173,25 @@ async function scrapeBreeder(url, name, sourceKey) {
       console.log(`[${sourceKey}] Sin resultados relevantes en pagina principal`);
       return [];
     }
-    $('h1, h2, h3, h4, .product-title, .product-name, .entry-title, .card-title').each((i, el) => {
+    $('h1, h2, h3, h4, .product-title, .product-name, .entry-title, .card-title, .woocommerce-loop-product__title').each((i, el) => {
       const t = $(el).text().trim();
       if (!t) return;
       const tl = t.toLowerCase();
-      if (!tl.includes('poodle') && !tl.includes('caniche') && !tl.includes('cachorro') && !tl.includes('mini')) return;
+      // Solo Poodle/Caniche explícito en el título (evita Pinscher/Schnauzer/Yorkshire "Mini").
+      if (!tl.includes('poodle') && !tl.includes('caniche')) return;
+      // Descartar colores fuera de criterio.
+      if (hasExcludedColor(t)) return;
       const color = detectColor(t);
-      if (color && !['marron', 'apricot', 'rojo'].includes(color)) return;
-      const price = detectPrice(text);
+      if (!color) return; // sin color valido (marron/apricot/rojo) no asumir apricot
       const size = detectSize(t);
+      // Excluir Mini Toy (<28cm) por criterio del usuario.
+      if (/mini\s*toy|minitoysto/.test(tl) || tl.includes('mini toy')) return;
+      // Precio desde el contenedor del producto (no de toda la pagina).
+      const card = $(el).closest('li.product, div.product, li, article, .product-item, .elementor-loop-container > *').first();
+      const cardText = (card.length ? card.text() : t);
+      const price = detectPrice(cardText);
       const link = $(el).closest('a').attr('href') || $(el).find('a').attr('href') || url;
-      results.push({ title: t, url: link.startsWith('http') ? link : `${url.replace(/\/$/, '')}/${link.replace(/^\//, '')}`, source: sourceKey, type: 'venta', color: color || 'apricot', size, price: price || null, notes: `Disponible en ${name}` });
+      results.push({ title: t, url: link.startsWith('http') ? link : `${url.replace(/\/$/, '')}/${link.replace(/^\//, '')}`, source: sourceKey, type: 'venta', color, size, price: price || null, notes: `Disponible en ${name}` });
     });
     if (results.length === 0 && (text.toLowerCase().includes('poodle') || title.toLowerCase().includes('poodle'))) {
       results.push({ title: `${name} - Ver disponibilidad`, url, source: sourceKey, type: 'venta', color: null, size: null, price: null, notes: `${name} · Consultar disponibilidad por WhatsApp`, status: 'consultar' });
@@ -275,10 +298,14 @@ async function run() {
   });
   savePoodles(existing);
 
+  // Saneo: elimina razas no-Poodle, colores/tamanos fuera de criterio y repara precios basura.
+  try { sanitize(); } catch (e) { console.log(`[sanitize] aviso: ${e.message}`); }
+
+  const after = loadPoodles();
   console.log(`\n=== Scraping completado ===`);
-  console.log(`Total: ${existing.poodles.length} poodles`);
+  console.log(`Total: ${after.poodles.length} poodles`);
   console.log(`Nuevos: ${newCount}`);
-  return { newCount, total: existing.poodles.length };
+  return { newCount, total: after.poodles.length };
 }
 
 if (require.main === module) {

@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -62,7 +64,13 @@ jobs:
           git config user.email "poodle-bot@noamlv.github.io"
           git add data/ poodles.html package*.json
           git diff --cached --quiet || git commit -m "auto: actualizacion diaria $(date +%Y-%m-%d)"
-          git push
+          # Traer cambios remotos (push manual o de otra corrida) antes de subir y reintentar
+          git pull --rebase origin "${GITHUB_REF_NAME}" || git rebase --abort
+          for i in 1 2 3; do
+            git push origin "HEAD:${GITHUB_REF_NAME}" && break
+            git pull --rebase origin "${GITHUB_REF_NAME}" || git rebase --abort
+            sleep 3
+          done
 
       - name: Crear Issue si hay bajas de precio
         if: steps.check-prices.outputs.alerts != ''
